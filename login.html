@@ -187,6 +187,58 @@
         overflow-y: hidden;
         
     }
+
+    form{
+            margin: auto;
+            height: 400px;
+            margin-top: 50px;
+            width:40%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fcf3ec;
+            gap:15px;
+        }
+        h4{
+          font-size: 35px;
+          color: #212529;
+         
+          margin-bottom: 0px;
+        }
+       #mobile{
+            border-radius: 30px;
+            font-size: 20px;
+            padding-left: 20px;
+            width:93%;
+            height:70px;
+            border: 0px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          
+        }
+        lebal{
+            font-size: 18px; 
+        }
+        #sub{
+            border-radius: 30px;
+            font-size: 25px;
+            background-color: white;
+            text-align: center;
+            width:40%;
+            height:70px;
+            border: 3px solid rgba(243, 49, 49, 0.281);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #sub:hover{
+            color: blue;
+            background-color: antiquewhite;
+            cursor: pointer;
+        }
+        #mobile:hover{
+            color:red;
+            background-color: rgba(214, 231, 206, 0.972);
+            
+        }
+
 </style>
 <body>
  <!-- nav bar start here -->
@@ -323,6 +375,14 @@
 <!-- Main Body Start here -->
 <div id="main-body">
    <h1>Login Menu </h1>
+   <form id ="form">
+    <h4 data-v-9c5275c6="" class="poppins-semi-bold">Login</h4>
+    <lebal>Mobile Number*</lebal>
+    <input type="number" name="mobile" id="mobile" placeholder="Enter Your Mobile Number"
+    maxlength="10"/></br>
+    <input id ="sub"type="submit" value="Continue"/></br>
+        
+   </form>
 
 </div>
 <!-- Main body ends here -->
@@ -380,5 +440,21 @@
 </body>
 </html>
 <script>
+    document.querySelector("form").addEventListener("submit", loginFun);
+      function loginFun() {
+            event.preventDefault();
+            var Mobile = document.querySelector("#mobile").value;
+            
+            if (Mobile=="1234567890")
+            {
+                alert("We have sent you an OTP. Please check your mobile.");
+                window.location.href = "./OTP.html";
+             
+            } 
+            else{
+            alert("Error! Please type valid card details only.");
+            document.querySelector("#name").value = "";
+          }
+      }
     
     </script>
