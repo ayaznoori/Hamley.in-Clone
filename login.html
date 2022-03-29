@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="assest/img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Hamleys®️ Toy Store - Buy Toys for Kids &amp; Children Games Online in India</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    body{
+        background-color: #FCF3EC;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+    }
+    .mySlides {display:none}
+        .w3-left, .w3-right, .w3-badge {cursor:pointer}
+        .w3-badge {height:13px;width:13px;padding:0;background-color: gray;}
+        .w3-left, .w3-right{
+            height:300px;width:13px;padding-right: 80px;
+        }
+    #container{
+        background-color:#CF102D;
+        width: 100%;
+        margin-top: 0px;
+    }
+    
+    #nav-bar{
+        width: 100%;
+        margin:  0px;
+        display: flex;
+        gap: 10px;
+        background-color: #CF102D;
+        color: white;
+        line-height: 24px;
+        justify-content:  space-between;
+        padding: 5px;
+        /* position: fixed ; */
+        
+    }
+
+    #nav_left{
+        display: flex;
+        gap: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-left: 20px;
+        height: 60px;
+    }
+    #nav_right{
+        display: flex;
+        gap: 35px;
+        font-size: 12px;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        align-items: center;
+    }
+    #nav_right a{
+        text-decoration: none;
+    }
+    #nav_right a:hover{
+        text-decoration: none;
+        color: white;
+    }
+    #nav_center{
+        display: flex;
+        gap: 35px;
+        font-size: 12px;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        align-items: center;
+    }
+    #search{
+        border-radius: 30px;
+        height: 50px;
+        width: 300px;
+        border: 0;
+        padding-left: 50px;
+        background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+        background-size: 30px;
+        background-position: 15px;
+        background-color: white;
+        font-size: 16px;
+        font-family:'Poppins', sans-serif ;
+        font-style: italic;
+
+        align-items: center;
+    }
+    .dropdown-content {
+         display: none;
+         position:absolute;
+         color: black;
+         width:1200px;
+         background-color: white;
+         margin-top: 23px;
+   
+    }
+    #cat,#age{
+        position: relative;
+        display: inline-block;
+        height: 55px;
+        margin-top: 30px;
+        cursor: pointer;
+        
+    }
+    #age img{
+        margin: 20px;
+    }
+    #cat:hover .dropdown-content ,#age:hover .dropdown-content  {
+        display:flex;
+        gap: 20px;
+        z-index: 1000;  
+        flex-wrap: wrap;
+    }
+   
+    .dropdown-content>div{
+        
+    }
+    .dropdown-content>div>div{
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        margin:20px;
+        height: 200px;
+    }
+    a{
+        font-size: 12px;
+    }
+    a:hover{
+        color: red;
+    }
+    #redband{
+        background-color: #CF102D;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #footer_container{
+        display: flex;
+        flex-direction: row;
+        margin: 40px;
+        gap: 20px;
+    }
+    #footer_container>div{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 300px;
+    }
+    #footer_container>div:last-child{
+        width: 650px;
+    }
+    #footer_container a{
+        font-size:14px;
+    }
+    #newsletter{
+        width: 300px;
+        height: 60px;
+        padding-left: 50px;
+        background: url("/assest/img/pngegg.png") no-repeat right;
+        background-size: 30px;
+        background-position: 15px;
+        background-color: white;
+        font-size: 16px;
+        font-family:'Poppins', sans-serif ;
+        font-style: italic;
+        border-radius: 30px;
+    }
+ 
+    h1{
+        font-size: 45px;
+        font-weight: bolder;
+       text-align: center;
+    }
+    #ageflex{
+        display: flex;
+        width: 1200px;
+        overflow : scroll;
+        gap: 20px;
+        margin: auto;
+        overflow-y: hidden;
+        
+    }
+</style>
+<body>
+ <!-- nav bar start here -->
+    <div id="nav-bar"> 
+        <div id="nav_left">
+        <div><img src="/assest/img/logopng.png" width="130px" height="60px" alt=""></div>
+        <!-- category drop down start -->
+        <div id="cat">Category&#9660;
+            <div class="dropdown-content">
+                <div> 
+                    <div><h4> Figures & Play Sets</h4>
+                         <a>Action Figure Play Sets</a>
+                         <a>Action Figure </a>
+                    </div>
+                    <div>
+                        <h4>Dolls & Playsets</h4>
+                        <a>Collectible Dolls</a>
+                        <a>Doll House & Accessories</a>
+                        <a>Dolls & Accessories</a>
+                    </div>
+                </div>
+                <div> 
+                      <div>
+                          <h4>Arts & Crafts</h4>
+                          <a>Activity Table & Boards</a>
+                          <a> Clay & Dough</a>
+                          <a>DIY Art & Craft Kits</a>
+                          <a>See more</a>
+                      </div>
+                      <div>
+                            <h4>Games & Puzzles</h4>
+                            <a>Board Games</a>
+                            <a>  Games</a>
+                             <a> Puzzles</a>
+                      </div>
+                </div>
+                <div>
+                    <div>
+                        <h4>Baby Clothing</h4>
+                        <a>Baby Boys Clothing</a>
+                        <a>Baby Essentials</a>
+                        <a> Baby Girls Clothing</a>
+                        <a> See more</a>
+                    </div>
+                    <div>
+                          <h4>Gifts & Novelty</h4>
+                          <a>Daily Essentials</a>
+                          <a> Room Furnishing Items</a>
+                           <a> Electronics Accessories</a>
+                           <a> See more</a>
+                    </div>
+        
+                </div>
+                <div>
+                    <div>
+                        <h4>Blasters & Accessories</h4>
+                        <a>Blasters</a>
+                        <a>Target Games and Darts</a>
+                    
+                    </div>
+                    <div>
+                          <h4>Infant & Pre-School Toys</h4>
+                          <a>Activity Toys</a>
+                          <a>Baby Gear</a>
+                           <a>Baby Utility</a>
+                           <a>See more</a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h4>Books & Magazines</h4>
+                        <a>Books</a>
+                           
+                    </div>
+                    <div>
+                          <h4>Musical Toys</h4>
+                          <a> Drums & Percussion Instruments</a>
+                          <a>Guitars & String Instruments</a>
+                           <a>Mics</a>
+                           <a>See more</a>
+                    </div>
+                </div> 
+           <div>
+                    <div>
+                        <h4>Construction & Building Toys </h4>
+                        <a>Construction Sets</a>
+                        <a>Generic Blocks</a>
+                        <a>Lego Blocks</a>
+                        <a>See more</a> 
+                    </div>
+                    <div>
+                          <h4>Rideons & Scooters</h4>
+                          <a>  Battery Operated Rideons</a>
+                          <a>Bikes & Trikes</a>
+                           <a>First Rideons</a>
+                           <a>See more</a>
+                    </div>
+                </div>
+                   
+                </div> 
+         </div>
+         <!-- category drop down end -->
+        <div id="age" >Age&#9660;
+            <div class="dropdown-content">
+                <img src="/assest/img/Age group banner-01.avif" alt="">
+                <img src="/assest/img/Age group banner-02.avif" alt="">
+                <img src="/assest/img/Age group banner-03.avif" alt="">
+                <img src="/assest/img/Age group banner-04.avif" alt="">
+                <img src="/assest/img/Age group banner-05.avif" alt="">
+                <img src="/assest/img/Age group banner-06.avif" alt="">
+                 <img src="/assest/img/Age group banner-07.avif" alt="">
+                 
+                </div> 
+        </div>
+        <div>Brand&#9660;</div>
+        <div> Collection&#9660;</div>
+        <div>Deals </div>
+        </div>
+        <div id="nav_center">
+            <div><input id="search" placeholder="Search" type="text"></div>
+        </div>
+        <div id="nav_right">
+            <div><a href="track.html"> Track order</a></div>
+            <div><a href="login.html"> Login</a></div>
+            <div><a href="whishlist.html"> Whishlist</a></div>
+            <div><a href="bag.html"> My Bag</a></div>
+       </div>
+
+  </div>
+ <!-- nav bar end here -->
+ <!-- container -->
+
+<!-- container ends here -->
+<!-- Main Body Start here -->
+<div id="main-body">
+   <h1>Shop By Age </h1>
+
+</div>
+<!-- Main body ends here -->
+<!-- Footer Start -->
+<div id="footer">
+    <div id="redband"> FREE RETURNS WITHIN 30 DAYS &nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp; FREE DELIVERY ON ORDERS OVER RS. 999</div>
+    <div id="footer_container">
+        <div> 
+            <h3>Most Loved Categories</h3>    
+            <a>Rideons & Scooters</a>
+            <a>Infant & Pre-School Toys</a>
+            <a>Remote Control Toys</a>
+            <a> Board Games</a>
+            <a> Soft Toys & Plush</a>
+            <a>Blasters & Accessories</a>
+            <a>Construction & Building Toys</a>
+            <a> Dolls & Playsets</a>
+            <a>Gifts & Novelty</a>
+        </div>
+        <div>
+            <h3>Most Searched</h3>    
+            <a>Hamleys</a>
+            <a>Lego</a>
+            <a>Barbie</a>
+            <a> Fisher Price</a>
+            <a> Hot Wheels</a>
+            <a>Nerf</a>
+            <a>Peppa Pig</a>
+            <a> Paw Patrol</a>
+            <a> Harry Potter</a>
+        </div>
+        <div>
+            <h3>About Hamleys</h3>    
+            <a> Our Toy Story</a>
+            <a>Store Locator</a>
+            <a> Career At Hamleys</a>
+        </div>
+        <div>
+            <h3>Support</h3>    
+            <a> My Account</a>
+            <a>Customer Care</a>
+            <a>Track Order</a>
+            <a>Cancel/Return Order</a>
+            <a>Sitemap</a>
+        </div>
+        <div>
+           <h3>Newsletter</h3> 
+            <p>Subscribe to hear about new products and stores.</p>
+            <input type="email" placeholder="your email address" id="newsletter">
+        </div>
+
+    </div>
+</div>
+<!-- Footer Ends here -->
+</body>
+</html>
+<script>
+    
+    </script>
