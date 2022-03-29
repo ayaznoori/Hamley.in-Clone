@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body .container{
+ height: 1000px;
+ width: 60%;
+ border: solid 1px red;
+ background-color:seashell;
+ padding-left: 30px;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title">New address</div>
+        <form id="form">
+            <div class="user">
+                <div class="input_box">
+                    <span class="delatile">Name*</span>
+                    <input type="text" placeholder="Enter your name*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">Street address*</span>
+                    <input type="text" placeholder="Enter your address*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">Pincode*</span>
+                    <input type="text" placeholder="Enter your pincode*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">City*</span>
+                    <input type="text" placeholder="Enter your pincode*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">State*</span>
+                    <input type="text" placeholder="Enter your State*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">Receiver mobile number*</span>
+                    <input type="text" placeholder="Enter receiver mobile number *" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">Email*</span>
+                    <input type="text" placeholder="Enter your email*" required>
+                 </div>
+                 
+            </div>
+            <p>Address type*</p>
+            <div>
+                
+                <input type="radio" id="contactChoice1" name="contact" value="Home">
+                <label for="contactChoice1">Home</label>
+            
+                <input type="radio" id="contactChoice2" name="contact"  value="Office">
+                <label for="contactChoice2">Office</label>
+            </div>
+            <button type="submit" >Continue</button>
+    </form>
+    </div>
+    
+
+</body>
+</html>
