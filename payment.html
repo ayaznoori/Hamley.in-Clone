@@ -5,74 +5,300 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+    <script
+      src=" https://kit.fontawesome.com/24c494a6b6.js"
+      crossorigin="anonymous"
+    ></script>
+
     <style>
-        body .container{
-           
-            
-        height: 1000px;
-        width: 60%;
-        border: solid 1px red;
-        background-color:seashell;
-        padding-left: 30px;
+        
+ #bar{
+     display: flex;
+     height: 80px;
+     width: 100%;
+      background-color:#CF102D;
+      justify-content:space-between;
+      align-items: center;
+    }
+    h3{
+        padding-left: 40px;
+        padding-right: 40px;
+        color: white;
+    }
+    #container{
+        width: 100%;
+       
+       display: flex;
+       flex-direction: row;
+       gap: 20px;
+    }
+    #right{
+        width: 45%;
+       
+
+    }
+    #left{
+        width: 55%;
+        
+       
+        padding-left: 50px;
+        background-color: seashell;
+    }
+    #left .title{
+       
+       font-size: 30px;
+       padding-top: 80px;
+       margin-bottom: 40px;
+    }
+   #form{
+       display: grid;
+      }
+#in1{
+height: 50px;
+width: 80%;
+margin-top: 10px;
+margin-bottom: 30px;
+padding-left: 25px;
+border-radius: 30px;
+font-size: 17px;
+
 }
- .input_box{
+#in2{
+    height: 50px;
+width: 290px;
+margin-top: 10px;
+margin-bottom: 30px;
+padding-left: 25px;
+border-radius: 30px;
+font-size: 17px;
+
+}
+.delatile{
+    font-size: 18px;
+}
+#set{
+    width: 82%;
+    height: 50px;
    
+    display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
 }
+#font{
+    font-size: 19px;
+    margin-bottom: 40px;
+    color: gray;
+    
+}
+ #contactChoice1{
+    margin-left: 30px;
+}
+p{
+    font-size: 19px;
+}
+#submit{
+    height: 60px;
+    width: 20%;
+    border-radius: 50px;
+    background-color: white;
+    border-color:#CF102D;
+    font-size: 19px;
+}
+#size{
+    font-size: 18px;
+}
+#right>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+#right>div>div:nth-child(2){
+    border-bottom: 1px solid black;
+}
+#voucherform {
+  width: 650px;
+  height: 40px;;
+  display:flex;
+  flex-direction:row;
+  border:1px solid grey;
+  padding:10px;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-left: 30px;
+}
+#voucherinput {
+  
+  flex-grow:2;
+  
+  border:none;
+}
+#voucherinput:focus {
+  
+  outline: none;
+}
+
+
+
 
     </style>
 </head>
 <body>
     
-    <div class="container">
-        <div class="title">New address</div>
-        <form id="form">
-            <div class="user">
-                <div class="input_box">
-                    <span class="delatile">Name*</span>
-                    <input type="text" placeholder="Enter your name*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">Street address*</span>
-                    <input type="text" placeholder="Enter your address*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">Pincode*</span>
-                    <input type="text" placeholder="Enter your pincode*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">City*</span>
-                    <input type="text" placeholder="Enter your pincode*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">State*</span>
-                    <input type="text" placeholder="Enter your State*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">Receiver mobile number*</span>
-                    <input type="text" placeholder="Enter receiver mobile number *" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">Email*</span>
-                    <input type="text" placeholder="Enter your email*" required>
-                 </div>
-                 
-            </div>
-            <p>Address type*</p>
-            <div>
-                
-                <input type="radio" id="contactChoice1" name="contact" value="Home">
-                <label for="contactChoice1">Home</label>
-            
-                <input type="radio" id="contactChoice2" name="contact"  value="Office">
-                <label for="contactChoice2">Office</label>
-            </div>
-            <button type="submit" >Continue</button>
-    </form>
-    </div>
     
+      <div id="bar">
+        <h3>Back to your bag</h3>
+        <div><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></div>
+        <h3>Secure checkout</h3>
+      </div>
+        <div id="container">
+            <div id="left">
+                <div class="title">New address</div>
+                <form id="form">
+           
+                <div class="input_box">
+                    <span class="delatile">Name*</span><br>
+                    <input type="text" id="in1" placeholder="Enter your name*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">Street address*</span><br>
+                    <input type="text" id="in1" placeholder="Enter your address*" required>
+                 </div>
+                 <div id="set">
+                 <div class="input_box">
+                    <span class="delatile">Pincode*</span><br>
+                    <input type="text" id="in2" placeholder="Enter your pincode*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">City*</span><br>
+                    <input type="text" id="in2" placeholder="Enter your pincode*" required>
+                 </div>
+                </div>
+                <div id="set">
+                 <div class="input_box">
+                    <span class="delatile">State*</span><br>
+                    <input type="text" id="in2" placeholder="Enter your State*" required>
+                 </div>
+                 <div class="input_box">
+                    <span class="delatile">Receiver mobile number*</span><br>
+                    <input type="text" id="in2" placeholder="Enter receiver mobile number *" required>
+                 </div>
+                </div>
+                 <div class="input_box">
+                    <span class="delatile">Email*</span><br>
+                    <input type="text" id="in1" placeholder="Enter your email*" required>
+                 </div>
+                 <div >
+                 <p >Address type*</p>
+                 <div id="font">
+                
+                            <input type="radio" id="contactChoice1" name="contact" value="Home">
+                            <label for="contactChoice1">Home</label>
+                        
+                            <input type="radio" id="contactChoice1" name="contact"  value="Office">
+                            <label for="contactChoice1">Office</label>
+                        </div>
+                    </div >
+                        <input type="submit" value="Continue" id="submit"></input>
+                        <div id="size"><p ><i class="fa-solid fa-arrow-left"></i> Back</p></div>
+                        
+                        
+                        </div>
+                        
+            
+    </form>
+    <div id="right">
+    
+  
+   </div>
+    </div>
+</div>
+
 
 </body>
 </html>
 <script>
-   var a=0;
-</script>
+  var ObjData=[
+  {
+      image_url:
+        "https://content.shop4reebok.com/static/Product-EX4296/reebok_EX4296_1.jpg.plp",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: "1170",
+      strikedoffprice: "2599",
+    },
+    {
+      image_url:
+        "https://content.shop4reebok.com/static/Product-EX3921/reebok_EX3921_1.jpg.plp",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://content.shop4reebok.com/static/Product-EX4160/reebok_EX4160_1.jpg.plp",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://content.shop4reebok.com/static/Product-FV8798/MEN_SWIM_SLIPPERS_FV8798_1.jpg.plp",
+      name: "MEN'S REEBOK SWIM AVENGER FLIP LP SLIPPERS",
+      price: 399,
+      strikedoffprice: 799,
+    }
+  ];
+  var total = ObjData.reduce(function (sum, elem, index, arr) {
+    return sum + Number(elem.price);
+  }, 0);
+  var length = ObjData.length;
+  var bag=document.createElement("div");
+  var items=document.createElement("div");
+   var items1=document.createElement("h2");
+   items1.innerText=length+"items";
+     var items2=document.createElement("h2");
+   items2.innerText=total
+    items.append(items1,items2);
+
+    var del=document.createElement("div");
+   var delcont=document.createElement("h2");
+    delcont.innerText="Delivery"
+     var delcost=document.createElement("h2");
+   delcost.innerText=100;
+    del.append(delcont,delcost);
+
+    var tot=document.createElement("div");
+   var totprice=document.createElement("h2");
+    totprice.innerText="Total"
+     var pricetot=document.createElement("h2");
+   pricetot.innerText=total+100;
+    tot.append(totprice,pricetot);
+
+  var voucher=document.createElement("div");
+  var voucherform=document.createElement("form");
+  voucherform.setAttribute("id","voucherform");
+  var voucherinput=document.createElement("input");
+  voucherinput.setAttribute("id","voucherinput");
+  var img1=document.createElement("img");
+  img1.src="/Unit_2_Project/assest/img/pngegg.png";
+  img1.style.width="50px"
+  var voucherbutton=document.createElement("button");
+  voucherbutton.style.backgroundColor="white";
+  voucherbutton.style.border="0px";
+  voucherbutton.setAttribute("id","inputimg");
+  voucherform.append(voucherinput,voucherbutton)
+   voucher.append(voucherform)
+   
+    
+    bag.append(items,del,tot,voucher);
+    document.querySelector("#right").append(bag);
+    document.querySelector("#inputimg").append(img1);
+
+
+   document.querySelector("#inputimg").addEventListener("onClick",vouchercal);
+   function vouchercal(){
+    
+       var b=document.querySelector("voucherinput").value;
+       alert("hi");
+   }
+
+
+    </script>
