@@ -349,7 +349,6 @@
    <h2>YOUR WISHLIST IS CURRENTLY EMPTY</h2>
    <p>Want to keep track of all your favourite pieces?<br>
     Simply go to the product page and click on the Heart Icon</p>
-   <span><i class="fa-solid fa-bag-shopping"></i></span>
 </div>
 <!-- Main body ends here -->
 <!-- Footer Start -->
@@ -407,32 +406,72 @@
 </html>
 <script>
     var data=JSON.parse(localStorage.getItem("wishlist"))||[];
-    if(data!=[]){
+   
+    if(data.length!=0)
+    {
+    
         document.querySelector("#main-body").innerText="";
         var td1=document.createElement("h1");
         td1.innerText="All Items";
-        
+        td1.style.textAlign="left";
         document.querySelector("#main-body").append(td1)
-        data.map(function(elem){
+        data.map(function(elem,i){
             var maindiv=document.createElement("div");
+           maindiv.style.borderTop ="2px solid grey";
+            maindiv.style.display="flex";
             var img=document.createElement("img");
             img.src=elem.img;
+            img.style.width="250px"
             var itemdiv=document.createElement("div");
+           
             var titlediv=document.createElement("div");
-            var head=document.createElement("h1");
+            titlediv.style.display="flex";
+            var head=document.createElement("h4");
             head.innerText=elem.proname;
             var close=document.createElement("p");
             close.innerText="X";
             titlediv.append(head,close);
             var itemcode=document.createElement("div");
-            itemcode.innerText=elem.itemcode;
+            itemcode.innerText="Item Code : "+ elem.itemcode;
+            var itemgender=document.createElement("div");
+            itemgender.innerText="Gender : "+ elem.gender;
+            var itemcolor=document.createElement("div");
+            itemcolor.innerText="Color : "+ elem.color;
+            var movetodiv=document.createElement("div");
+            movetodiv.style.display="flex";
+            movetodiv.style.justifyContent="space-between";
+            var butdiv=document.createElement("button");
+            butdiv.addEventListener("click",movetobag);
+            function movetobag(){
+                var bagitem1=JSON.parse(localStorage.getItem("bagitem"))||[];
+               bagitem1.push(elem);
+               localStorage.setItem("bagitem",JSON.stringify(bagitem1));
+               var temp=JSON.parse(localStorage.getItem("wishlist"));
+                temp.splice(i,1);
+               localStorage.setItem("wishlist",JSON.stringify(temp));
+               window.location.reload();
 
+            }
+        
+            butdiv.innerText="Move to bag";
+            var moneydiv=document.createElement("div");
+            moneydiv.innerText=elem.price;
+            movetodiv.append(butdiv,moneydiv);
+            itemdiv.append(titlediv,itemcode,itemgender,itemcolor,movetodiv);
+            maindiv.append(img,itemdiv);
+            document.querySelector("#main-body").append(maindiv);
         })
         
-}
+       } 
+       else
+       {
+        
+           document.querySelector("main-div").innerText="";
+           var head=document.querySelector("h2");
+           head.innerText="YOUR WISHLIST IS CURRENTLY EMPTY";
+          var para=document.createElement("p");
+          para.innerHTML="Want to keep track of all your favourite pieces?<br>Simply go to the product page and click on the Heart Icon"
+          document.querySelector("main-div").append(head,para);
+       }
 
-
-
-
-    
     </script>
