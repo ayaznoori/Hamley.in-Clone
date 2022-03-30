@@ -170,7 +170,7 @@
         width: 300px;
         height: 60px;
         padding-left: 50px;
-        background: url("/assest/img/pngegg.png") no-repeat right;
+        background: url("assest/img/pngegg.png") no-repeat right;
         background-size: 30px;
         background-position: 15px;
         background-color: white;
@@ -232,7 +232,7 @@
  <!-- nav bar start here -->
     <div id="nav-bar"> 
         <div id="nav_left">
-        <div><img src="/assest/img/logopng.png" width="130px" height="60px" alt=""></div>
+        <div><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></div>
         <!-- category drop down start -->
         <div id="cat">Category&#9660;
             <div class="dropdown-content">
@@ -331,13 +331,13 @@
          <!-- category drop down end -->
         <div id="age" >Age&#9660;
             <div class="dropdown-content">
-                <img src="/assest/img/Age group banner-01.avif" alt="">
-                <img src="/assest/img/Age group banner-02.avif" alt="">
-                <img src="/assest/img/Age group banner-03.avif" alt="">
-                <img src="/assest/img/Age group banner-04.avif" alt="">
-                <img src="/assest/img/Age group banner-05.avif" alt="">
-                <img src="/assest/img/Age group banner-06.avif" alt="">
-                 <img src="/assest/img/Age group banner-07.avif" alt="">
+                <img src="assest/img/Age group banner-01.avif" alt="">
+                <img src="assest/img/Age group banner-02.avif" alt="">
+                <img src="assest/img/Age group banner-03.avif" alt="">
+                <img src="assest/img/Age group banner-04.avif" alt="">
+                <img src="assest/img/Age group banner-05.avif" alt="">
+                <img src="assest/img/Age group banner-06.avif" alt="">
+                 <img src="assest/img/Age group banner-07.avif" alt="">
                  
                 </div> 
         </div>
@@ -351,7 +351,7 @@
         <div id="nav_right">
             <div><a href="track.html"> Track order</a></div>
             <div id="loginpage"><a href="login.html"> Login</a></div>
-            <div><a href="whishlist.html"> Whishlist</a></div>
+            <div><a href="wishlist.html"> wishlist</a></div>
             <div><a href="bag.html"> My Bag</a></div>
        </div>
 
@@ -360,14 +360,14 @@
  <!-- container -->
  <div id="container"> 
     <div class="w3-content w3-display-container" style="max-width:1200px">
-        <div><img class="mySlides" src="/assest/img/Banner-01.avif" style="width: 100%;"></div>
-        <div><img class="mySlides" src="/assest/img/Banner-02.avif" style="width:100%"></div>
-        <div><img class="mySlides" src="/assest/img/Banner-03.avif" style="width:100%"></div>
-        <div><img class="mySlides" src="/assest/img/Banner-04.avif" style="width:100%"></div>
-        <div><img class="mySlides" src="/assest/img/Banner-05.avif" style="width:100%"></div>
+        <div><img class="mySlides" src="assest/img/Banner-01.avif" style="width: 100%;"></div>
+        <div><img class="mySlides" src="assest/img/Banner-02.avif" style="width:100%"></div>
+        <div><img class="mySlides" src="assest/img/Banner-03.avif" style="width:100%"></div>
+        <div><img class="mySlides" src="assest/img/Banner-04.avif" style="width:100%"></div>
+        <div><img class="mySlides" src="assest/img/Banner-05.avif" style="width:100%"></div>
         <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)"><img src="/assest/img/left.png" width="100px" alt=""></div>
-          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)"><img src="/assest/img/right.png" width="100px"alt=""></div>
+          <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)"><img src="assest/img/left.png" width="100px" alt=""></div>
+          <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)"><img src="assest/img/right.png" width="100px"alt=""></div>
         </div>
           <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">  
           <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
@@ -385,13 +385,13 @@
    <h1>Shop By Age </h1>
    <!-- Age Group Slider Start-->
    <div id="ageflex">
-    <img src="/assest/img/Age group banner-01.avif" alt="">
-    <img src="/assest/img/Age group banner-02.avif" alt="">
-    <img src="/assest/img/Age group banner-03.avif" alt="">
-    <img src="/assest/img/Age group banner-04.avif" alt="">
-    <img src="/assest/img/Age group banner-05.avif" alt="">
-    <img src="/assest/img/Age group banner-06.avif" alt="">
-    <img src="/assest/img/Age group banner-07.avif" alt="">
+    <img src="assest/img/Age group banner-01.avif" alt="">
+    <img src="assest/img/Age group banner-02.avif" alt="">
+    <img src="assest/img/Age group banner-03.avif" alt="">
+    <img src="assest/img/Age group banner-04.avif" alt="">
+    <img src="assest/img/Age group banner-05.avif" alt="">
+    <img src="assest/img/Age group banner-06.avif" alt="">
+    <img src="assest/img/Age group banner-07.avif" alt="">
    </div>
    <!-- Age Group Slider Ends -->
    <!-- Trending Items -->
@@ -566,9 +566,9 @@
           
          function addtowhishfun(){
             if(localStorage.getItem("success")==1){
-              var bagitem2=JSON.parse(localStorage.getItem("whishlist"))||[];
+              var bagitem2=JSON.parse(localStorage.getItem("wishlist"))||[];
               bagitem2.push(elem);
-              localStorage.setItem("whishlist",JSON.stringify(bagitem2));
+              localStorage.setItem("wishlist",JSON.stringify(bagitem2));
               }
             else
             {

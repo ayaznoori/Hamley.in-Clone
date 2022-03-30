@@ -12,7 +12,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     body{
-        background-color: #FCF3EC;
+        
         font-family: 'Poppins', sans-serif;
         margin: 0;
     }
@@ -159,6 +159,9 @@
     #footer_container a{
         font-size:14px;
     }
+    #footer{
+        background-color: #FCF3EC;
+    }
     #newsletter{
         width: 300px;
         height: 60px;
@@ -186,6 +189,27 @@
         margin: auto;
         overflow-y: hidden;
         
+    }
+    #main-body>h2{
+        margin:auto;
+        font-weight: bold;
+        text-align: center;
+    }
+    #main-body>p{
+        width:80%;
+        margin: auto;
+        font-size: 20px;
+        text-align: center;
+    }
+    #main-body{
+        width: 70%;
+        margin:auto;
+        padding: 80px;
+        
+    
+    }
+        
+
     }
 </style>
 <body>
@@ -311,7 +335,7 @@
         <div id="nav_right">
             <div><a href="track.html"> Track order </a></div>
             <div><a href="login.html"> Login</a></div>
-            <div><a href="whishlist.html"> Whishlist</a></div>
+            <div><a href="wishlist.html"> wishlist</a></div>
             <div><a href="bag.html"> My Bag</a></div>
        </div>
 
@@ -322,7 +346,9 @@
 <!-- container ends here -->
 <!-- Main Body Start here -->
 <div id="main-body">
-   <h1>Shop By Age </h1>
+   <h2>YOUR WISHLIST IS CURRENTLY EMPTY</h2>
+   <p>Want to keep track of all your favourite pieces?<br>
+    Simply go to the product page and click on the Heart Icon</p>
    <span><i class="fa-solid fa-bag-shopping"></i></span>
 </div>
 <!-- Main body ends here -->
@@ -380,5 +406,33 @@
 </body>
 </html>
 <script>
+    var data=JSON.parse(localStorage.getItem("wishlist"))||[];
+    if(data!=[]){
+        document.querySelector("#main-body").innerText="";
+        var td1=document.createElement("h1");
+        td1.innerText="All Items";
+        
+        document.querySelector("#main-body").append(td1)
+        data.map(function(elem){
+            var maindiv=document.createElement("div");
+            var img=document.createElement("img");
+            img.src=elem.img;
+            var itemdiv=document.createElement("div");
+            var titlediv=document.createElement("div");
+            var head=document.createElement("h1");
+            head.innerText=elem.proname;
+            var close=document.createElement("p");
+            close.innerText="X";
+            titlediv.append(head,close);
+            var itemcode=document.createElement("div");
+            itemcode.innerText=elem.itemcode;
+
+        })
+        
+}
+
+
+
+
     
     </script>
