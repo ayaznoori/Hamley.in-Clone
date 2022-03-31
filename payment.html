@@ -17,6 +17,7 @@
      display: flex;
      height: 80px;
      width: 100%;
+     margin:0;
       background-color:#CF102D;
       justify-content:space-between;
       align-items: center;
@@ -28,23 +29,87 @@
     }
     #container{
         width: 100%;
-       
+       background-color: #FCF3EC;
        display: flex;
        flex-direction: row;
        gap: 20px;
     }
     #right{
-        width: 45%;
+        width: 30%;
+        background-color: white;
+        padding: 50px;
+        font-family:'Poppins', sans-serif ;
        
-
     }
     #left{
-        width: 55%;
-        
-       
+        width: 70%;
         padding-left: 50px;
-        background-color: seashell;
+        padding-right: 30px;
+        background-color: #FCF3EC;
+        margin-right: 25px;
+    
     }
+ #right_top>div{
+   display: flex;
+   flex-direction: column;
+ }
+#right_top>div>div{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+#right_top>div>div:nth-child(1){
+    border-bottom: 3px solid rgb(153, 152, 152);
+}
+#voucherform {
+  width: 300px;
+  height: 50px;;
+  display:flex;
+  flex-direction:row;
+  border:1px solid grey;
+  padding:10px;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 1px -5px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-top: 30px;
+ 
+}
+#voucherinput {
+    font-family:'Poppins', sans-serif ;
+  flex-grow:2;
+  
+  border:none;
+}
+#voucherinput:focus {
+  
+  outline: none;
+}
+
+h2{
+    font-family:'Poppins', sans-serif ; 
+    font-size: 20px;
+    font-weight: bolder;
+}
+#checkoutbtn{
+    border-radius: 30px;
+    width: 280px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    border:2px solid #CF102D;
+    box-shadow: #CF102D 1px 4px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: white;
+}
+#checkoutbtn:hover{
+    cursor: pointer;
+} 
+#voucherinput:focus {
+  
+  outline: none;
+}
+ 
     #left .title{
        
        font-size: 30px;
@@ -199,16 +264,16 @@ p{
                     </div >
                         <input type="submit" value="Continue" id="submit"></input>
                         <div id="size"><p ><i class="fa-solid fa-arrow-left"></i> Back</p></div>
-                        
-                        
-                        </div>
-                        
+                         
             
     </form>
-    <div id="right">
-    
-  
-   </div>
+  </div>
+  <div id="right">
+    <div id="right_top"></div>
+    <div id="right_bottom">
+       
+     </div>
+</div>
     </div>
 </div>
 
@@ -216,89 +281,181 @@ p{
 </body>
 </html>
 <script>
-  var ObjData=[
-  {
-      image_url:
-        "https://content.shop4reebok.com/static/Product-EX4296/reebok_EX4296_1.jpg.plp",
-      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
-      price: "1170",
-      strikedoffprice: "2599",
-    },
-    {
-      image_url:
-        "https://content.shop4reebok.com/static/Product-EX3921/reebok_EX3921_1.jpg.plp",
-      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
-      price: 699,
-      strikedoffprice: 999,
-    },
-    {
-      image_url:
-        "https://content.shop4reebok.com/static/Product-EX4160/reebok_EX4160_1.jpg.plp",
-      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
-      price: 945,
-      strikedoffprice: 2099,
-    },
-    {
-      image_url:
-        "https://content.shop4reebok.com/static/Product-FV8798/MEN_SWIM_SLIPPERS_FV8798_1.jpg.plp",
-      name: "MEN'S REEBOK SWIM AVENGER FLIP LP SLIPPERS",
-      price: 399,
-      strikedoffprice: 799,
-    }
-  ];
-  var total = ObjData.reduce(function (sum, elem, index, arr) {
+  var data=JSON.parse(localStorage.getItem("bagitem"))||[];
+   
+   if(data.length!=0)
+   {
+var total = data.reduce(function (sum, elem, index, arr) {
     return sum + Number(elem.price);
   }, 0);
-  var length = ObjData.length;
+  var length = data.length;
   var bag=document.createElement("div");
   var items=document.createElement("div");
    var items1=document.createElement("h2");
-   items1.innerText=length+"items";
+   items1.innerText=length+" items";
+   
      var items2=document.createElement("h2");
-   items2.innerText=total
+   items2.innerHTML="&#8377; "+total
     items.append(items1,items2);
-
+   
     var del=document.createElement("div");
    var delcont=document.createElement("h2");
     delcont.innerText="Delivery"
      var delcost=document.createElement("h2");
-   delcost.innerText=100;
+   delcost.innerHTML="&#8377; "+100;
     del.append(delcont,delcost);
-
     var tot=document.createElement("div");
    var totprice=document.createElement("h2");
     totprice.innerText="Total"
      var pricetot=document.createElement("h2");
-   pricetot.innerText=total+100;
+    if(total<999)
+    pricetot.innerHTML="&#8377; "+total+100;
+    else
+    pricetot.innerHTML="&#8377; "+total;
     tot.append(totprice,pricetot);
 
   var voucher=document.createElement("div");
   var voucherform=document.createElement("form");
   voucherform.setAttribute("id","voucherform");
   var voucherinput=document.createElement("input");
+  voucherinput.setAttribute("placeholder","Apply Voucher Code")
   voucherinput.setAttribute("id","voucherinput");
   var img1=document.createElement("img");
-  img1.src="/Unit_2_Project/assest/img/pngegg.png";
-  img1.style.width="50px"
+  img1.src=" assest/img/pngegg.png";
+  img1.style.width="30px"
   var voucherbutton=document.createElement("button");
   voucherbutton.style.backgroundColor="white";
   voucherbutton.style.border="0px";
   voucherbutton.setAttribute("id","inputimg");
+  voucherbutton.addEventListener("click",voucherfun);
+  counter=0;
+  function voucherfun(){
+    counter++;
+    event.preventDefault();
+      if(voucherinput.value=="hamleys30" && counter ==1){
+          per=total*0.30;
+          pricetot.innerHTML="&#8377; "+(total-per);
+          bag.innerHTML="";
+          tot.innerHTML="";
+          tot.append(totprice,pricetot);
+           alert("Voucher Applied to Total Amount")
+          bag.append(items,tot);
+      }
+      else if(counter!=1 && voucherinput.value=="hamleys30" )
+      {
+          alert("Duplicate Voucher Code")
+      }
+      else
+         alert("Invalid Voucher Code")
+  }
   voucherform.append(voucherinput,voucherbutton)
    voucher.append(voucherform)
    
-    
+   if(total<999){
     bag.append(items,del,tot,voucher);
-    document.querySelector("#right").append(bag);
+   }
+   else
+   {
+    bag.append(items,tot,voucher);
+   }
+    document.querySelector("#right_top").append(bag);
     document.querySelector("#inputimg").append(img1);
 
+
+   
 
    document.querySelector("#inputimg").addEventListener("onClick",vouchercal);
    function vouchercal(){
     
        var b=document.querySelector("voucherinput").value;
-       alert("hi");
-   }
+        
+     }
+     
 
+    //right_bottom
+    var rightitems=document.createElement("div");
+   var rightitems1=document.createElement("h2");
+   rightitems1.innerText=length+" Items in your bag";
+   rightitems.append(rightitems1);
+   document.querySelector("#right_bottom").append(rightitems);
+
+  //right bottom item push
+ 
+        data.map(function(elem,i){
+            var maindiv=document.createElement("div");
+            maindiv.style.margin="20px";
+            maindiv.style.backgroundColor="#FCF3EC";
+            maindiv.style.borderRight="3px solid orange"
+           maindiv.style.borderBottom ="3px solid orange";
+            maindiv.style.display="flex";
+            maindiv.style.justifyContent="space-between";
+            var img=document.createElement("img");
+            img.src=elem.img;
+            img.style.width="120px"
+            img.style.height="120px"
+            var itemdiv=document.createElement("div");
+            itemdiv.style.width="280px"
+            var probrand=document.createElement("div");
+            probrand.innerText=elem.probrand;
+            var head=document.createElement("h4");
+            head.innerText=elem.proname;
+            head.style.fontFamily="Poppins, sans-serif"
+            head.style.fontWeight="bold";
+            var movetodiv=document.createElement("div");
+            movetodiv.style.display="flex";
+            movetodiv.style.justifyContent="space-between";
+
+            var moneydiv=document.createElement("div");
+            moneydiv.innerHTML="&#8377; "+elem.price;
+            
+            movetodiv.append(moneydiv);
+            itemdiv.append(probrand,head,movetodiv);
+            maindiv.append(img,itemdiv);
+            document.querySelector("#right_bottom").append(maindiv);
+ 
+
+
+            })
+
+
+
+
+
+
+ }
+else
+       {
+ 
+          document.querySelector("#container").innerText="";
+          document.querySelector("#container").style.display="block";
+          document.querySelector("#container").style.textAlign="center";
+          document.querySelector("#container").style.height="400px";
+          document.querySelector("#container").style.backgroundColor="white";
+           var head=document.createElement("h2");
+           head.innerText="YOUR CART IS EMPTY ";
+           head.style.fontSize="30px";
+           head.style.paddingTop="30px";
+          var para=document.createElement("p");
+          para.innerHTML="Click here to continue shopping."
+
+          document.querySelector("#container").append(head,para);
+       }
+
+
+
+       
+   if(localStorage.getItem("success")==1){
+         var bag=document.querySelector("#loginpage").innerText="";
+         logdiv=document.createElement("div");
+         img=document.createElement("img");
+         img.src="assest/img/teddy.png";
+         img.style.width="20px";
+         var acc=document.createElement("a");
+         acc.href="index.html";
+         acc.innerText="Account";
+         logdiv.append(img,acc);
+         document.querySelector("#loginpage").append(logdiv);
+        }
+     
 
     </script>
