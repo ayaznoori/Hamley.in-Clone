@@ -43,12 +43,14 @@
        
     }
     #left{
-        width: 70%;
-        padding-left: 50px;
-        padding-right: 30px;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 10px;
         background-color: #FCF3EC;
-        margin-right: 15px;
+        margin-right: 0px;
         font-family:'Poppins', sans-serif ;
+        display: flex;;
+        flex-direction: column;
     }
  #right_top>div{
    display: flex;
@@ -111,71 +113,14 @@ h2{
   outline: none;
 }
  
-    #left .title{
+   .title{
        
        font-size: 30px;
        padding-top: 80px;
-       margin-bottom: 40px;
-    }
-   #form{
-       display: grid;
-      }
-#in1{
-height: 50px;
-width: 80%;
-margin-top: 10px;
-margin-bottom: 30px;
-padding-left: 25px;
-border-radius: 30px;
-font-size: 17px;
-
-}
-#in2{
-    height: 50px;
-width: 290px;
-margin-top: 10px;
-margin-bottom: 30px;
-padding-left: 25px;
-border-radius: 30px;
-font-size: 17px;
-
-}
-.delatile{
-    font-size: 18px;
-}
-#set{
-    width: 100%;
-    height: 50px;
-   
-    display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
-}
-#font{
-    font-size: 19px;
-    margin-bottom: 40px;
-    color: gray;
-    
-}
- #contactChoice1{
-    margin-left: 30px;
-}
-p{
-    font-size: 19px;
-}
-#submit{
-  border-radius: 30px;
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    margin-top: 0px;
-    margin-left: 30px;
-    border: 2px solid #CF102D;
-    box-shadow: #cf102d 1px 4px 0px, rgb(0 0 0 / 23%) 0px 6px 6px;
-    background-color: white;
-}
-#size{
-    font-size: 18px;
+       margin-bottom: 30px;
+       margin-left: 20px;
+       font-weight: bolder;
+       font-size: 25px;
 }
 #right>div>div{
     display: flex;
@@ -205,72 +150,82 @@ p{
   
   outline: none;
 }
+#card{
+width:550px;
+padding:10px;
+background-color: white;
+margin : 10px;
+}
+#cod{
+  width:550px;
+padding:10px;
+background-color: white;
+margin : 10px;
 
-
-
+}
+#card>div{
+  margin :30px;
+  width: 400;
+  border: 1px solid grey;
+  display: flex;
+  padding: 20px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+#cod>div{
+  margin :30px;
+  width: 400;
+  border: 1px solid grey;
+  display: flex;
+  padding: 20px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+#cashpic{
+  visibility: hidden;
+}
+#cardpic{
+  visibility: hidden;
+  }
+#payoutbtn {
+    border-radius: 30px;
+    width: 280px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-left: 30px;
+    border: 2px solid #CF102D;
+    box-shadow: #cf102d 1px 4px 0px, rgb(0 0 0 / 23%) 0px 6px 6px;
+    background-color: white;
+}
     </style>
 </head>
 <body>
     
     
       <div id="bar">
-        <h3 onclick="back()"><i class="fa-solid fa-caret-left"></i>   Back to your bag</h3>
+        <h3 onclick="back()"><i class="fa-solid fa-caret-left"></i>   Back to Payment</h3>
         <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
         <h3>Secure checkout</h3>
       </div>
         <div id="container">
             <div id="left">
-                <div class="title">New address</div>
-                <form id="form">
-           
-                <div class="input_box">
-                    <span class="delatile">Name*</span><br>
-                    <input type="text" class="cname"  id="in1" placeholder="Enter your name*" required>
+                <div class="title">Payment</div>
+                <div id="card">
+                  <div id="cardinsert" onclick="paytocard()">
+                    <img src="assest/img/tick.png" width="30px" height="30px" alt="" id="cardpic">
+                    <img src="assest/img/card.png" width="80px" alt=""> 
+                    <p> &nbsp;Pay Online With Razorpay</p>
+                  </div>
                  </div>
-                 <div class="input_box">
-                    <span class="delatile">Street address*</span><br>
-                    <input type="text" class="cadd" id="in1" placeholder="Enter your address*" required>
-                 </div>
-                 <div id="set">
-                 <div class="input_box">
-                    <span class="delatile">Pincode*</span><br>
-                    <input type="number"  class="cpin" id="in2" placeholder="Enter your pincode*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">City*</span><br>
-                    <input type="text"  class="ccity" id="in2" placeholder="Enter your pincode*" required>
-                 </div>
-                </div>
-                <div id="set">
-                 <div class="input_box">
-                    <span class="delatile">State*</span><br>
-                    <input type="text" class="cstate" id="in2" placeholder="Enter your State*" required>
-                 </div>
-                 <div class="input_box">
-                    <span class="delatile">Receiver mobile number*</span><br>
-                    <input type="number" class="cmobile" id="in2" placeholder="Enter receiver mobile number *" required>
-                 </div>
-                </div>
-                 <div class="input_box">
-                    <span class="delatile">Email*</span><br>
-                    <input type="email" class="cemail" id="in1" placeholder="Enter your email*" required>
-                 </div>
-                 <div >
-                 <p ></p>
-                 <div id="font">
-                      Address type:
-                            <input type="radio" class="chome" class="home" id="contactChoice1" name="contact" value="Home">
-                            <label for="contactChoice1">Home</label>
-                        
-                            <input type="radio"  class="coffice" class="office" id="contactChoice1" name="contact"  value="Office">
-                            <label for="contactChoice1">Office</label>
-                        </div>
-                    </div >
-                        <input type="submit" value="Continue" id="submit"></input>
-                        <div id="size" onclick="back()"><p ><i class="fa-solid fa-arrow-left"></i> Back</p></div>
-                         
-            
-    </form>
+                <div id="cod">
+                  <div id="codinsert" onclick="paytocash()">
+                     <img src="/assest/img/tick.png" width="30px" height="30px" alt="" id="cashpic"> 
+                     <img src="assest/img/truck.jpg" width="80px"  alt="">
+                     <p>&nbsp;Cash On Delivery</p>
+                  </div >
+                  </div>
+                  <div id="size" onclick="back()"><p ><i class="fa-solid fa-arrow-left"></i> Back</p></div>
   </div>
   <div id="right">
     <div id="right_top"></div>
@@ -285,8 +240,65 @@ p{
 </body>
 </html>
 <script>
+  function paytocard(){
+    if(c==1){
+        c++;
+        var bag=document.createElement("button");
+         bag.innerText="Continue Checkout";
+         bag.setAttribute("id","payoutbtn");
+         bag.addEventListener("click",checkout);
+       document.querySelector("#card").append(bag);
+       document.querySelector("#cardpic").style.visibility="visible";
+       document.querySelector("#cardinsert").style.border="1px solid red";
+       document.querySelector("#codinsert").style.border="1px solid black";
+       document.querySelector("#cashpic").style.visibility="hidden";
+      }
+     else
+     {
+      var element=document.querySelector("button");
+      element.remove();
+      document.querySelector("#cardpic").style.visibility="hidden";
+      document.querySelector("#cardinsert").style.border="1px solid black";
+      c=0;
+      c++;
+     }
+
+
+  }
+  var c=1;
+  function paytocash(){
+      if(c==1){
+        c++;
+        var bag=document.createElement("button");
+         bag.innerText="Place Order";
+         bag.setAttribute("id","payoutbtn");
+         bag.addEventListener("click",checkout);
+       document.querySelector("#cod").append(bag);
+       document.querySelector("#cashpic").style.visibility="visible";
+       document.querySelector("#codinsert").style.border="1px solid red";
+       document.querySelector("#cardinsert").style.border="1px solid black";
+       document.querySelector("#cardpic").style.visibility="hidden";
+      }
+     else
+     {
+      var element=document.querySelector("button");
+      element.remove();
+      document.querySelector("#cashpic").style.visibility="hidden";
+      document.querySelector("#codinsert").style.border="1px solid black";
+      c=0;
+      c++;
+     }
+
+
+  }
+
+function checkout(){
+  window.location.href="thankyou.html";
+}
+
+
   function back(){
-    window.location.href="bag.html"
+    window.location.href="payment.html"
   }
   var data=JSON.parse(localStorage.getItem("bagitem"))||[];
    
@@ -425,40 +437,7 @@ var total = data.reduce(function (sum, elem, index, arr) {
             });
 
       //input taking part
-      document.querySelector("#form").addEventListener("submit",inputpart);
-      var coustadd=JSON.parse(localStorage.getItem("custdetail"))||[];
-      function inputpart(){
-       event.preventDefault();
-       
-        var ele=document.getElementsByName("contact");
-        checked="";
-        for(var i=0;i<ele.length;i++){
-          if(ele[i].checked)
-          checked=ele[i].value;
-        }
-        obj={
-          name:document.querySelector(".cname").value,
-          add:document.querySelector(".cadd").value,
-          pin:document.querySelector(".cpin").value,
-          city:document.querySelector(".ccity").value,
-          state:document.querySelector(".cstate").value,
-          mobile:document.querySelector(".cmobile").value,
-          email:document.querySelector(".cemail").value,
-          type:checked,
-        }
-        coustadd.push(obj)
-          localStorage.setItem("custdetail",JSON.stringify(coustadd));
-          alert("Address saved successfully");
-          window.location.href="payment_gateway.html";
-      }
- 
       
-
-
-
-
-
-
 
  }
 else
