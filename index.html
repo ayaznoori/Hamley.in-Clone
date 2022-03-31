@@ -231,7 +231,7 @@
  <!-- nav bar start here -->
     <div id="nav-bar"> 
         <div id="nav_left">
-        <div><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></div>
+            <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
         <!-- category drop down start -->
         <div id="cat">Category&#9660;
             <div class="dropdown-content">
@@ -590,14 +590,18 @@
          
          
      })
-     
+  
      if(localStorage.getItem("success")==1){
          var bag=document.querySelector("#loginpage").innerText="";
-         bag="";
+         logdiv=document.createElement("div");
+         img=document.createElement("img");
+         img.src="assest/img/teddy.png";
+         img.style.width="20px";
          var acc=document.createElement("a");
-         acc.href="#";
+         acc.href="index.html";
          acc.innerText="Account";
-         document.querySelector("#loginpage").append(acc);
+         logdiv.append(img,acc);
+         document.querySelector("#loginpage").append(logdiv);
         }
     
 

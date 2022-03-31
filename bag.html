@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Hamleys®️ Toy Store - Buy Toys for Kids &amp; Children Games Online in India</title>
+    <script
+    src=" https://kit.fontawesome.com/24c494a6b6.js"
+    crossorigin="anonymous"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-        body{
+      
+    body{
         
         font-family: 'Poppins', sans-serif;
         margin: 0;
@@ -166,7 +170,7 @@
         width: 300px;
         height: 60px;
         padding-left: 50px;
-        background: url("/assest/img/pngegg.png") no-repeat right;
+        background: url("assest/img/pngegg.png") no-repeat right;
         background-size: 30px;
         background-position: 15px;
         background-color: white;
@@ -206,29 +210,32 @@
        gap: 20px;
     }
     #right{
-        width: 45%;
+        width: 30%;
         background-color: white;
         padding: 50px;
+        font-family:'Poppins', sans-serif ;
+        margin:40px;
     }
     #left{
-        width: 55%;
+        width: 70%;
         padding-left: 50px;
-        padding-right: 40px;
+        padding-right: 30px;
         background-color: white;
-        margin-right: 40px;
+        margin-right: 25px;
     
     }
-
-#right>div>div{
+ 
+#right_top>div>div{
     display: flex;
     justify-content: space-between;
+ 
 }
-#right>div>div:nth-child(2){
-    border-bottom: 1px solid black;
+#right_top>div>div:nth-child(1){
+    border-bottom: 3px solid rgb(153, 152, 152);
 }
 #voucherform {
-  width: 650px;
-  height: 40px;;
+  width: 300px;
+  height: 50px;;
   display:flex;
   flex-direction:row;
   border:1px solid grey;
@@ -236,9 +243,12 @@
   border-radius: 30px;
   padding-left: 20px;
   margin-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 1px -5px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-top: 30px;
+ 
 }
 #voucherinput {
-  
+    font-family:'Poppins', sans-serif ;
   flex-grow:2;
   
   border:none;
@@ -248,8 +258,25 @@
   outline: none;
 }
 
-
-
+h2{
+    font-family:'Poppins', sans-serif ; 
+    font-size: 20px;
+    font-weight: bolder;
+}
+#checkoutbtn{
+    border-radius: 30px;
+    width: 280px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    border:2px solid #CF102D;
+    box-shadow: #CF102D 1px 4px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: white;
+}
+#checkoutbtn:hover{
+    cursor: pointer;
+}
 
     </style>
 </head>
@@ -257,7 +284,7 @@
    <!-- nav bar start here -->
    <div id="nav-bar"> 
     <div id="nav_left">
-    <div><img src="/assest/img/logopng.png" width="130px" height="60px" alt=""></div>
+    <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
     <!-- category drop down start -->
     <div id="cat">Category&#9660;
         <div class="dropdown-content">
@@ -356,13 +383,13 @@
      <!-- category drop down end -->
     <div id="age" >Age&#9660;
         <div class="dropdown-content">
-            <img src="/assest/img/Age group banner-01.avif" alt="">
-            <img src="/assest/img/Age group banner-02.avif" alt="">
-            <img src="/assest/img/Age group banner-03.avif" alt="">
-            <img src="/assest/img/Age group banner-04.avif" alt="">
-            <img src="/assest/img/Age group banner-05.avif" alt="">
-            <img src="/assest/img/Age group banner-06.avif" alt="">
-             <img src="/assest/img/Age group banner-07.avif" alt="">
+            <img src="assest/img/Age group banner-01.avif" alt="">
+            <img src="assest/img/Age group banner-02.avif" alt="">
+            <img src="assest/img/Age group banner-03.avif" alt="">
+            <img src="assest/img/Age group banner-04.avif" alt="">
+            <img src="assest/img/Age group banner-05.avif" alt="">
+            <img src="assest/img/Age group banner-06.avif" alt="">
+             <img src="assest/img/Age group banner-07.avif" alt="">
              
             </div> 
     </div>
@@ -374,10 +401,10 @@
         <div><input id="search" placeholder="Search" type="text"></div>
     </div>
     <div id="nav_right">
-        <div><a href="track.html"> Track order </a></div>
-        <div><a href="login.html"> Login</a></div>
-        <div><a href="wishlist.html"> wishlist</a></div>
-        <div><a href="bag.html"> My Bag</a></div>
+        <div> <i class="fa fa-truck-fast"></i><a href="track.html"> Track order</a></div>
+        <div id="loginpage"><img src="assest/img/teddy.png" width="20px" alt=""><a href="login.html"> Login</a></div>
+        <div><i class="fa-regular fa-heart"></i><a href="wishlist.html"> wishlist</a></div>
+        <div><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag</a></div>
    </div>
 
 </div>
@@ -386,12 +413,70 @@
                 
             </div>
     <div id="right">
-    
-  
+       <div id="right_top"></div>
+       <div id="right_bottom">
+           <button id="checkoutbtn" onClick="checkout()">Checkout Securely</button>
+           <p style="font-size: 10px; text-align: center;margin-left: 20px;">By clicking the button you accept the Terms and Conditions and you agree that you have read and accept our Privacy Policy.</p>
+        <p>We Accept</p>
+        <img src="https://hamleysgumletfront.gumlet.io/_nuxt/img/paymet-img.0852f88.png" width="300px" alt="">
+        <br><p>Need help?<br>
+            Please contact customer service</p>
+        </div>
    </div>
     </div>
 </div>
+<!-- Main body ends here -->
+<!-- Footer Start -->
+<div id="footer">
+    <div id="redband"> FREE RETURNS WITHIN 30 DAYS &nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp; FREE DELIVERY ON ORDERS OVER RS. 999</div>
+    <div id="footer_container">
+        <div> 
+            <h3>Most Loved Categories</h3>    
+            <a>Rideons & Scooters</a>
+            <a>Infant & Pre-School Toys</a>
+            <a>Remote Control Toys</a>
+            <a> Board Games</a>
+            <a> Soft Toys & Plush</a>
+            <a>Blasters & Accessories</a>
+            <a>Construction & Building Toys</a>
+            <a> Dolls & Playsets</a>
+            <a>Gifts & Novelty</a>
+        </div>
+        <div>
+            <h3>Most Searched</h3>    
+            <a>Hamleys</a>
+            <a>Lego</a>
+            <a>Barbie</a>
+            <a> Fisher Price</a>
+            <a> Hot Wheels</a>
+            <a>Nerf</a>
+            <a>Peppa Pig</a>
+            <a> Paw Patrol</a>
+            <a> Harry Potter</a>
+        </div>
+        <div>
+            <h3>About Hamleys</h3>    
+            <a> Our Toy Story</a>
+            <a>Store Locator</a>
+            <a> Career At Hamleys</a>
+        </div>
+        <div>
+            <h3>Support</h3>    
+            <a> My Account</a>
+            <a>Customer Care</a>
+            <a>Track Order</a>
+            <a>Cancel/Return Order</a>
+            <a>Sitemap</a>
+        </div>
+        <div>
+           <h3>Newsletter</h3> 
+            <p>Subscribe to hear about new products and stores.</p>
+            <input type="email" placeholder="your email address" id="newsletter">
+        </div>
 
+    </div>
+</div>
+<!-- Footer Ends here -->
 
 </body>
 </html>
@@ -421,7 +506,7 @@ var data=JSON.parse(localStorage.getItem("bagitem"))||[];
             img.src=elem.img;
             img.style.width="150px"
             var itemdiv=document.createElement("div");
-            itemdiv.style.width="350px"
+            itemdiv.style.width="450px"
             var probrand=document.createElement("div");
             probrand.innerText=elem.probrand;
             var head=document.createElement("h4");
@@ -432,17 +517,33 @@ var data=JSON.parse(localStorage.getItem("bagitem"))||[];
             movetodiv.style.display="flex";
             movetodiv.style.justifyContent="space-between";
             var butdiv=document.createElement("div");
+         
             var inpu=document.createElement("input");
+            inpu.style.margin="8px";
+            inpu.style.paddingLeft="18px";
              inpu.setAttribute("id","counterinput")
              inpu.value=1;
+             inpu.style.width="50px";
+             inpu.style.height="30px"
+             inpu.style.borderRadius="80px";
+             inpu.style.border="0"
+             inpu.style.boxShadow="rgba(0, 0, 0, 0.19) 1px -2px 0px 2px";
             var dec=document.createElement("button");
              dec.innerText="-";
              dec.setAttribute("id","decrease");
-            
+             dec.style.backgroundColor="#FCF3EC";
+             dec.style.borderRadius="50px";
+             dec.style.border ="1px solid pink";
+             dec.style.height="30px";
+             dec.style.width="40px";
              var inc=document.createElement("button");
              inc.innerText="+";
              inc.setAttribute("id","increase");
-            
+             inc.style.borderRadius="50px"
+             inc.style.backgroundColor="#FCF3EC";
+             inc.style.border ="1px solid pink";
+             inc.style.height="30px";
+             inc.style.width="40px";
             butdiv.append(dec,inpu,inc);
         
 
@@ -482,71 +583,83 @@ var data=JSON.parse(localStorage.getItem("bagitem"))||[];
         temp--;
         var bag=document.querySelector("#counterinput").value=temp;
     }
-       } 
-       else
-       {
-        
-           document.querySelector("#left").innerText="";
-           var head=document.querySelector("h2");
-           head.innerText="YOUR WISHLIST IS CURRENTLY EMPTY";
-          var para=document.createElement("p");
-          para.innerHTML="Want to keep track of all your favourite pieces?<br>Simply go to the product page and click on the Heart Icon"
-          document.querySelector("main-div").append(head,para);
-       }
+  
+    //right side 
 
-
-
-
-
-
-//right side 
-
-  var ObjData=JSON.parse(localStorage.getItem("bagitem"))||[];
- 
-  var total = ObjData.reduce(function (sum, elem, index, arr) {
+  var total = data.reduce(function (sum, elem, index, arr) {
     return sum + Number(elem.price);
   }, 0);
-  var length = ObjData.length;
+  var length = data.length;
   var bag=document.createElement("div");
   var items=document.createElement("div");
    var items1=document.createElement("h2");
-   items1.innerText=length+"items";
+   items1.innerText=length+" items";
+   
      var items2=document.createElement("h2");
    items2.innerText=total
     items.append(items1,items2);
-
+   
     var del=document.createElement("div");
    var delcont=document.createElement("h2");
     delcont.innerText="Delivery"
      var delcost=document.createElement("h2");
    delcost.innerText=100;
     del.append(delcont,delcost);
-
     var tot=document.createElement("div");
    var totprice=document.createElement("h2");
     totprice.innerText="Total"
      var pricetot=document.createElement("h2");
-   pricetot.innerText=total+100;
+    if(total<999)
+    pricetot.innerText=total+100;
+    else
+    pricetot.innerText=total;
     tot.append(totprice,pricetot);
 
   var voucher=document.createElement("div");
   var voucherform=document.createElement("form");
   voucherform.setAttribute("id","voucherform");
   var voucherinput=document.createElement("input");
+  voucherinput.setAttribute("placeholder","Apply Voucher Code")
   voucherinput.setAttribute("id","voucherinput");
   var img1=document.createElement("img");
-  img1.src="/Unit_2_Project/assest/img/pngegg.png";
-  img1.style.width="50px"
+  img1.src=" assest/img/pngegg.png";
+  img1.style.width="30px"
   var voucherbutton=document.createElement("button");
   voucherbutton.style.backgroundColor="white";
   voucherbutton.style.border="0px";
   voucherbutton.setAttribute("id","inputimg");
+  voucherbutton.addEventListener("click",voucherfun);
+  counter=0;
+  function voucherfun(){
+    counter++;
+    event.preventDefault();
+      if(voucherinput.value=="hamleys30" && counter ==1){
+          per=total*0.30;
+          console.log(per)
+          pricetot.innerText=total-per;
+          bag.innerText="";
+          tot.innerText="";
+          tot.append(totprice,pricetot);
+           alert("Voucher Applied to Total Amount")
+      }
+      else if(counter!=1 && voucherinput.value=="hamleys30" )
+      {
+          alert("Duplicate Voucher Code")
+      }
+      else
+         alert("Invalid Voucher Code")
+  }
   voucherform.append(voucherinput,voucherbutton)
    voucher.append(voucherform)
    
-    
+   if(total<999){
     bag.append(items,del,tot,voucher);
-    document.querySelector("#right").append(bag);
+   }
+   else
+   {
+    bag.append(items,tot,voucher);
+   }
+    document.querySelector("#right_top").append(bag);
     document.querySelector("#inputimg").append(img1);
 
 
@@ -554,8 +667,44 @@ var data=JSON.parse(localStorage.getItem("bagitem"))||[];
    function vouchercal(){
     
        var b=document.querySelector("voucherinput").value;
-       alert("hi");
-   }
+        
+     }
+
+     function checkout(){
+         window.location.href="payment.html";
+     }
+ }
+else
+       {
+ 
+          document.querySelector("#container").innerText="";
+          document.querySelector("#container").style.display="block";
+          document.querySelector("#container").style.textAlign="center";
+          document.querySelector("#container").style.height="400px";
+          document.querySelector("#container").style.backgroundColor="white";
+           var head=document.createElement("h2");
+           head.innerText="YOUR CART IS EMPTY ";
+           head.style.fontSize="30px";
+           head.style.paddingTop="30px";
+          var para=document.createElement("p");
+          para.innerHTML="Click here to continue shopping."
+
+          document.querySelector("#container").append(head,para);
+       }
 
 
+
+       
+   if(localStorage.getItem("success")==1){
+         var bag=document.querySelector("#loginpage").innerText="";
+         logdiv=document.createElement("div");
+         img=document.createElement("img");
+         img.src="assest/img/teddy.png";
+         img.style.width="20px";
+         var acc=document.createElement("a");
+         acc.href="index.html";
+         acc.innerText="Account";
+         logdiv.append(img,acc);
+         document.querySelector("#loginpage").append(logdiv);
+        }
     </script>

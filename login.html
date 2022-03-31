@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Hamleys®️ Toy Store - Buy Toys for Kids &amp; Children Games Online in India</title>
+    <script
+    src=" https://kit.fontawesome.com/24c494a6b6.js"
+    crossorigin="anonymous"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -243,7 +246,7 @@
  <!-- nav bar start here -->
     <div id="nav-bar"> 
         <div id="nav_left">
-        <div><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></div>
+            <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
         <!-- category drop down start -->
         <div id="cat">Category&#9660;
             <div class="dropdown-content">
@@ -360,10 +363,10 @@
             <div><input id="search" placeholder="Search" type="text"></div>
         </div>
         <div id="nav_right">
-            <div><a href="track.html"> Track order</a></div>
-            <div><a href="login.html"> Login</a></div>
-            <div><a href="wishlist.html"> wishlist</a></div>
-            <div><a href="bag.html"> My Bag</a></div>
+            <div> <i class="fa fa-truck-fast"></i><a href="track.html"> Track order</a></div>
+            <div id="loginpage"><img src="assest/img/teddy.png" width="20px" alt=""><a href="login.html"> Login</a></div>
+            <div><i class="fa-regular fa-heart"></i><a href="wishlist.html"> wishlist</a></div>
+            <div><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag</a></div>
        </div>
 
   </div>
@@ -455,5 +458,16 @@
             document.querySelector("#mobile").value = "";
           }
       }
-    
+      if(localStorage.getItem("success")==1){
+         var bag=document.querySelector("#loginpage").innerText="";
+         logdiv=document.createElement("div");
+         img=document.createElement("img");
+         img.src="assest/img/teddy.png";
+         img.style.width="20px";
+         var acc=document.createElement("a");
+         acc.href="index.html";
+         acc.innerText="Account";
+         logdiv.append(img,acc);
+         document.querySelector("#loginpage").append(logdiv);
+        }
     </script>
