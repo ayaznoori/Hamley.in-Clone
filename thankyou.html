@@ -612,18 +612,16 @@ var total = data.reduce(function (sum, elem, index, arr) {
 
   var voucher=document.createElement("div");
   var voucherform=document.createElement("form");
-  voucherform.setAttribute("id","voucherform");
+   
   var voucherinput=document.createElement("input");
-  voucherinput.setAttribute("placeholder","Apply Voucher Code")
-  voucherinput.setAttribute("id","voucherinput");
+   
   var img1=document.createElement("img");
-  img1.src=" assest/img/pngegg.png";
-  img1.style.width="30px"
-  var voucherbutton=document.createElement("button");
-  voucherbutton.style.backgroundColor="white";
-  voucherbutton.style.border="0px";
-  voucherbutton.setAttribute("id","inputimg");
-  voucherbutton.addEventListener("click",voucherfun);
+ 
+ 
+   
+ 
+   
+ 
   counter=0;
   function voucherfun(){
     counter++;
@@ -644,7 +642,7 @@ var total = data.reduce(function (sum, elem, index, arr) {
       else
          alert("Invalid Voucher Code")
   }
-  voucherform.append(voucherinput,voucherbutton)
+   
    voucher.append(voucherform)
    
    if(total<999){
@@ -655,25 +653,12 @@ var total = data.reduce(function (sum, elem, index, arr) {
     bag.append(items,tot,voucher);
    }
     document.querySelector("#right_top").append(bag);
-    document.querySelector("#inputimg").append(img1);
+ 
 
-
-   
-
-   document.querySelector("#inputimg").addEventListener("onClick",vouchercal);
-   function vouchercal(){
-    
-       var b=document.querySelector("voucherinput").value;
-        
-     }
-     
+ 
 
     //right_bottom
-    var rightitems=document.createElement("div");
-   var rightitems1=document.createElement("h2");
-   rightitems1.innerText=length+" Items in your bag";
-   rightitems.append(rightitems1);
-   document.querySelector("#right_bottom").append(rightitems);
+ 
 
   //right bottom item push
  

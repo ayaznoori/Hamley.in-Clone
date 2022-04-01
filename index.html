@@ -44,7 +44,8 @@
         line-height: 24px;
         justify-content:  space-between;
         padding: 5px;
-        /* position: fixed ; */
+        /* position: fixed ;
+        z-index: 100px; */
         
     }
 
@@ -236,12 +237,76 @@
     #addtobag{
         cursor: pointer;
     }
+    ::-webkit-scrollbar {
+  width: 20px;
+  background-color: white;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+@media all and (min-width: 760px) and (max-width: 990px)
+{
+            #nav_left{
+               display: none;
+            }
+     #nav_right>div,#nav_right>div>a{
+         font-size: 10px;
+     }
+     #nav_right{
+         padding: 0;
+         margin: 0;
+     }
+     #search{
+         width:180px;
+     }
+     .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+     #container{
+         padding:20px
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     }
+}
+@media all and (min-width: 81px) and (max-width: 761px)
+{
+    #nav_left{
+               display: none;
+            }
+    #nav_right{
+        display: none;
+    }
+
+}
 </style>
 <body>
  <!-- nav bar start here -->
     <div id="nav-bar"> 
+        <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
         <div id="nav_left">
-            <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
+            
         <!-- category drop down start -->
         <div id="cat">Category&#9660;
             <div class="dropdown-content">

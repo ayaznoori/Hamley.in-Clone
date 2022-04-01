@@ -209,7 +209,16 @@
     
     }
         
-
+#mvtbag{
+    border-radius: 30px;
+    margin-top: 15px;
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            border: 1px solid #CF102D;
+            box-shadow: #cf102d 1px 4px 0px, rgb(0 0 0 / 23%) 0px 7px 6px;
+            background-color: white;
+}
     
 </style>
 <body>
@@ -405,7 +414,18 @@
 </html>
 <script>
     var data=JSON.parse(localStorage.getItem("wishlist"))||[];
-   
+    if(localStorage.getItem("success")==1){
+         var bag=document.querySelector("#loginpage").innerText="";
+         logdiv=document.createElement("div");
+         img=document.createElement("img");
+         img.src="assest/img/teddy.png";
+         img.style.width="20px";
+         var acc=document.createElement("a");
+         acc.href="index.html";
+         acc.innerText="Account";
+         logdiv.append(img,acc);
+         document.querySelector("#loginpage").append(logdiv);
+        }
     if(data.length!=0)
     {
     
@@ -429,6 +449,7 @@
             head.innerText=elem.proname;
             var close=document.createElement("p");
             close.innerText="X";
+            close.style.color="red";
             close.style.cursor= "pointer";
             close.addEventListener("click",emptyfun);
             function emptyfun(){
@@ -450,6 +471,7 @@
             movetodiv.style.display="flex";
             movetodiv.style.justifyContent="space-between";
             var butdiv=document.createElement("button");
+            butdiv.setAttribute("id","mvtbag")
             butdiv.addEventListener("click",movetobag);
             function movetobag(){
                 var bagitem1=JSON.parse(localStorage.getItem("bagitem"))||[];
@@ -515,4 +537,6 @@ var data=JSON.parse(localStorage.getItem("wishlist"))||[];
                      {
                      document.querySelector("#bl").append("");
                     }
+                           
+  
     </script>

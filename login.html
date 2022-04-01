@@ -235,8 +235,14 @@
         #sub:hover{
             cursor: pointer;
         }
-        
-        
+        @media only screen and (max-width: 721px){
+            #nav_left{
+                visibility: hidden;
+            }
+            body{
+                background-color: black;
+            }
+        }
    </style>
 <body>
  <!-- nav bar start here -->
@@ -486,4 +492,6 @@
                      {
                      document.querySelector("#bl").append("");
                     }
+                    
+
     </script>
