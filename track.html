@@ -185,6 +185,7 @@
         font-size: 45px;
         font-weight: bolder;
        text-align: center;
+
     }
     #ageflex{
         display: flex;
@@ -197,38 +198,40 @@
     }
     form{
             margin: auto;
-            height: 400px;
             margin-top: 50px;
-            width:40%;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            background-color: #fcf3ec;
+            width:30%;
+            text-align: center;
             gap:15px;
+             height: 250px;
+  
+            line-height: 60px;
+            margin-bottom: 100px;
         }
         #h4{
-          font-size: 35px;
+          font-size: 23px;
           color: #212529;
-         
+          font-family: 'Poppins', sans-serif;
           margin-bottom: 0px;
+          font-weight: bolder;
         }
        #mobile{
-            border-radius: 30px;
             font-size: 20px;
-            padding-left: 20px;
-            width:93%;
-            height:70px;
+            padding-left: 5px;
+            width:60%;
+            height:40px;
+            border: 0;
+            border-bottom: 1px solid black;
+            text-align: center;
+        }
+        #mobile:focus{
             border: 0px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          
-        }
-        lebal{
-            font-size: 18px; 
-        }
+            border-bottom: 1px solid black;
+        } 
+   
         #sub{
             border-radius: 30px;
-            width: 200px;
-            height: 70px;
+            width: 150px;
+            
             font-size: 20px;
             border: 1px solid #CF102D;
             box-shadow: #cf102d 1px 4px 0px, rgb(0 0 0 / 23%) 0px 7px 6px;
@@ -239,7 +242,7 @@
             cursor: pointer;
         }
         
-        
+
    </style>
 <body>
  <!-- nav bar start here -->
@@ -364,8 +367,8 @@
         <div id="nav_right">
             <div> <i class="fa fa-truck-fast"></i><a href="track.html"> Track order</a></div>
             <div id="loginpage"><img src="assest/img/teddy.png" width="20px" alt=""><a href="login.html"> Login</a></div>
-            <div><i class="fa-regular fa-heart"></i><a href="wishlist.html"> wishlist<p id="wl"></p></a></div>
-            <div><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag<p id="bl"></p></a></div>
+            <div><i class="fa-regular fa-heart"></i><a href="wishlist.html"> wishlist</a></div>
+            <div><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag</a></div>
        </div>
 
   </div>
@@ -377,9 +380,8 @@
 <div id="main-body">
  
     <form id ="form">
-        <h4  id="h4"data-v-9c5275c6="" class="poppins-semi-bold">Login</h4>
-        <lebal>Mobile Number*</lebal>
-        <input type="number" name="mobile" id="mobile" placeholder="Enter Your Mobile Number"
+        <h4  id="h4" >ENTER THE ORDER NO</h4>
+        <input type="text" name="mobile" id="mobile" placeholder="Oder id here"
         maxlength="10"/></br>
         <input id ="sub"type="submit" value="Continue"/></br>
             
@@ -441,22 +443,7 @@
 </body>
 </html>
 <script>
-    document.querySelector("form").addEventListener("submit", loginFun);
-      function loginFun() {
-            event.preventDefault();
-            var mobile = document.querySelector("#mobile").value;
-            length=mobile.trim().split("").length;
-            if (length==10)
-            {
-                alert("We have sent you an OTP. Please check your mobile.");
-                window.location.href = "./OTP.html";
-             
-            } 
-            else{
-            alert("Error! Please Type Valid Mobile Number  Only.");
-            document.querySelector("#mobile").value = "";
-          }
-      }
+   
       if(localStorage.getItem("success")==1){
          var bag=document.querySelector("#loginpage").innerText="";
          logdiv=document.createElement("div");
