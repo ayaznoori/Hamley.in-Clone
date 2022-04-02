@@ -84,6 +84,7 @@ function myFunction(x) {
               itemdiv.append(probrand,head,movetodiv);
               maindiv.append(img,itemdiv);
               document.querySelector("#left").append(maindiv);
+              temp=null;
               inc.onclick=function(){
                           temp=document.querySelector("#counterinput").value;
                           temp++;
@@ -108,7 +109,9 @@ function myFunction(x) {
           var bag=document.querySelector("#counterinput").value=temp;
       }
   
-  
+  if(temp==0){
+      maindiv.innerText=""
+  }
   
   
           })
