@@ -18,17 +18,17 @@ function myFunction(x) {
   
       var data=JSON.parse(localStorage.getItem("wishlist"))||[];
       if(localStorage.getItem("success")==1 && !x.matches){
-           var bag=document.querySelector("#loginpage").innerText="";
-           logdiv=document.createElement("div");
-           img=document.createElement("img");
-           img.src="assest/img/teddy.png";
-           img.style.width="20px";
-           var acc=document.createElement("a");
-           acc.href="index.html";
-           acc.innerText="Account";
-           logdiv.append(img,acc);
-           document.querySelector("#loginpage").append(logdiv);
-          }
+        var bag=document.querySelector("#loginpage").innerText="";
+        logdiv=document.createElement("div");
+        img=document.createElement("img");
+        img.src="assest/img/teddy.png";
+        img.style.width="20px";
+        var acc=document.createElement("a");
+        acc.href="accountpage.html";
+        acc.innerText="Account";
+        logdiv.append(img,acc);
+        document.querySelector("#loginpage").append(logdiv);
+       }
       if(data.length!=0)
       {
       

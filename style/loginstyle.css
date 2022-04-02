@@ -13,20 +13,21 @@ body{
 #container{
     background-color:#CF102D;
     width: 100%;
-    margin-top: 0px;
+    padding-top: 10px;
+
 }
 
 #nav-bar{
     width: 100%;
-    margin:  0px;
+    margin-bottom:  5px;
     display: flex;
     gap: 10px;
     background-color: #CF102D;
     color: white;
     line-height: 24px;
     justify-content:  space-between;
-    padding: 5px;
-    /* position: fixed ; */
+    padding-top: 0px;
+    position:fixed;
     
 }
 
@@ -89,7 +90,7 @@ body{
 
 }
 #cat,#age{
-    position: relative;
+     
     display: inline-block;
     height: 55px;
     margin-top: 30px;
@@ -102,7 +103,7 @@ body{
 #cat:hover .dropdown-content ,#age:hover .dropdown-content  {
     display:flex;
     gap: 20px;
-    z-index: 1000;  
+     
     flex-wrap: wrap;
 }
 
@@ -177,10 +178,11 @@ h1{
     overflow-y: hidden;
   
 }
+
 form{
         margin: auto;
         height: 400px;
-        margin-top: 50px;
+        margin-top: 80px;
         width:40%;
         padding: 40px;
         display: flex;
@@ -234,6 +236,7 @@ form{
  }
  #search{
      width:180px;
+     
  }
  .w3-left{
      display: none;
@@ -282,9 +285,10 @@ form{
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
+padding-bottom: 10px;
 }
 #container{
-     padding:20px
+     padding:20px;
  }
  #footer_container{
     display: flex;

@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-         #nav-bar{
+      
+    body{
+        
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+    }
+    .mySlides {display:none}
+        .w3-left, .w3-right, .w3-badge {cursor:pointer}
+        .w3-badge {height:13px;width:13px;padding:0;background-color: gray;}
+        .w3-left, .w3-right{
+            height:300px;width:13px;padding-right: 80px;
+        }
+
+    #container{
+        width: 100%;
+       background-color: #FCF3EC;
+       display: flex;
+       flex-direction: row;
+       gap: 20px;
+   
+    }
+    .spacer{
+        height: 80px;
+    }
+    #nav-bar{
         width: 100%;
         margin:  0px;
         display: flex;
@@ -9,7 +33,8 @@
         line-height: 24px;
         justify-content:  space-between;
         padding: 5px;
-        position: fixed ; 
+        position: fixed ;
+        
         
     }
 
@@ -88,7 +113,6 @@
         z-index: 1000;  
         flex-wrap: wrap;
     }
-   
  
     .dropdown-content>div>div{
         display: flex;
@@ -103,16 +127,7 @@
     a:hover{
         color: red;
     }
-        #bar{
-     display: flex;
-     height: 80px;
-     width: 100%;
-     margin:0;
-      background-color:#CF102D;
-      justify-content:space-between;
-      align-items: center;
-    }
-     #redband{
+    #redband{
         background-color: #CF102D;
         padding: 15px;
         text-align: center;
@@ -137,6 +152,9 @@
     #footer_container a{
         font-size:14px;
     }
+    #footer{
+        background-color: #FCF3EC;
+    }
     #newsletter{
         width: 300px;
         height: 60px;
@@ -152,48 +170,53 @@
     }
  
     h1{
-        font-size: 45px;
+        font-size:35px;
         font-weight: bolder;
-       text-align: center;
-    }
-    h3{
-      font-family:'Poppins', sans-serif ;
- 
- 
-        color: rgb(0, 0, 0);
-    }
-    #container{
-        width: 100%;
-       background-color: #FCF3EC;
-       display: flex;
-       flex-direction: row;
-       gap: 20px;
+        font-family:'Poppins', sans-serif ;
        
     }
+    #ageflex{
+        display: flex;
+        width: 1200px;
+        overflow : scroll;
+        gap: 20px;
+        margin: auto;
+        overflow-y: hidden;
+    
+    }  
+  #account_over{
+      border-bottom: 3px solid black;
+  }
+     
+    h3{
+         
+        padding-right: 40px;
+        color: rgb(0, 0, 0);
+    }
+    #signout{
+        font-size: 20px;
+        font-family:'Poppins', sans-serif ;
+    }
+  
     #right{
-        width: 40%;
+        width: 70%;
         background-color: white;
         padding: 50px;
         font-family:'Poppins', sans-serif ;
-       
+        margin:10px;
     }
     #left{
-        width: 70%;
-        padding-left: 15px;
-        padding-right: 10px;
-        background-color: #FCF3EC;
-        margin-right: 50px;
-        font-family:'Poppins', sans-serif ;
-        display: flex;;
-        flex-direction: column;
+        width: 30%;
+        padding-left: 50px;
+        padding-right: 30px;
+        background-color: white;
+        margin-right: 25px;
+    
     }
-    #right_top{
-        padding-top: 50px;
+    ul{
+        line-height: 50px;
     }
- #right_top>div{
-   display: flex;
-   flex-direction: column;
- }
+    
 #right_top>div>div{
     display: flex;
     justify-content: space-between;
@@ -212,7 +235,7 @@
   border-radius: 30px;
   padding-left: 20px;
   margin-left: 30px;
-  box-shadow: rgba(0, 0, 0, 0.19) 1px -5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.19) 1px -5px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin-top: 30px;
  
 }
@@ -245,84 +268,8 @@ h2{
 }
 #checkoutbtn:hover{
     cursor: pointer;
-} 
-#voucherinput:focus {
-  
-  outline: none;
-}
- 
-   .title{
-       
-       font-size: 30px;
-       padding-top: 80px;
-       margin-bottom: 30px;
-       margin-left: 20px;
-       font-weight: bolder;
-       font-size: 25px;
-       border-bottom: 3px solid black;
-       padding-bottom: 30px;
-
-       
-}
-#right>div>div{
-    display: flex;
-    justify-content: space-between;
-}
-#right>div>div:nth-child(2){
-    border-bottom: 1px solid black;
-}
-#voucherform {
-  width: 650px;
-  height: 40px;;
-  display:flex;
-  flex-direction:row;
-  border:1px solid grey;
-  padding:10px;
-  border-radius: 30px;
-  padding-left: 20px;
-  margin-left: 30px;
-}
-#voucherinput {
-  
-  flex-grow:2;
-  
-  border:none;
-}
-#voucherinput:focus {
-  
-  outline: none;
-}
-#card{
-width:40%;
-border-top: 4px solid black;
-padding-top: 10px;
-display: flex;
-flex-direction: column;
-line-height: 3px;
-}
-#cod{
-  width:40%;
-  border-top: 4px solid black;
-padding-top: 10px;
-
 }
 
-#divflex{
-  display: flex;
-  justify-content: space-between;
-  padding-left: 25px;
-  line-height: 2px;
-}
-#instruction{
-  padding-left: 15px;
-}
-#card-cod{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 20px;
-  margin-top: 30px;
-}
 @media all and (min-width: 760px) and (max-width: 990px)
 {
             #nav_left{
@@ -354,7 +301,28 @@ padding-top: 10px;
         margin: 40px;
         gap: 20px;
      }
-      
+     #container{
+        width: 100%;
+       background-color: #FCF3EC;
+       display: flex;
+       flex-direction:column;
+       gap: 20px;
+    }
+    #right{
+        width: 90%;
+        background-color: white;
+        padding: 10px;
+        font-family:'Poppins', sans-serif ;
+        margin:10px;
+    }
+    #left{
+        width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+        margin-right: 10px;
+    
+    }
 }
 @media all and (min-width: 81px) and (max-width: 761px)
 {
@@ -377,12 +345,7 @@ padding-top: 10px;
     flex-wrap: wrap;
 }
 #container{
-         padding:20px;
-         display:block;
-         width: 100%;
-         padding-left: 10px;
-         padding-right: 15px;
-        padding-top: 80px;
+         padding:20px
      }
      #footer_container{
         display: flex;
@@ -391,15 +354,27 @@ padding-top: 10px;
         margin: 40px;
         gap: 20px;
      } 
-     #left{
-         width: 100%;
-         margin-right: 0px;
-         padding-right: 15px;
-     } 
-     #right{
-         width: 90%;
-         margin: auto;
-         padding-top: 80px;
-     }
+     #container{
+        width: 100%;
+       background-color: #FCF3EC;
+       display: flex;
+       flex-direction:column;
+       gap: 20px;
+    } 
+    #right{
+        width: 90%;
+        background-color: white;
+        padding: 10px;
+        font-family:'Poppins', sans-serif ;
+        margin:auto;
+    }
+    #left{
+        width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+        margin: auto;
+    
+    }
 
 }

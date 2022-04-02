@@ -163,7 +163,7 @@ function myFunction(x) {
            img.src="assest/img/teddy.png";
            img.style.width="20px";
            var acc=document.createElement("a");
-           acc.href="index.html";
+           acc.href="accountpage.html";
            acc.innerText="Account";
            logdiv.append(img,acc);
            document.querySelector("#loginpage").append(logdiv);

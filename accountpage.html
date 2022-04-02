@@ -12,7 +12,7 @@
     src=" https://kit.fontawesome.com/24c494a6b6.js"
     crossorigin="anonymous"></script>
 </head>
- <link rel="stylesheet" href="style/bagstyle.css">
+ <link rel="stylesheet" href="style/accountstyle.css">
 </head>
 <body>
    <!-- nav bar start here -->
@@ -145,18 +145,25 @@
 <div class="spacer"></div>
         <div id="container">
             <div id="left">
-                
+       <h1>Your Hamleys account</h1>
+ <ul type="none">   
+<li>Account Overview</li>
+<li>Your orders and returns</li>
+<li>Address book</li>
+<li>Archive Orders</li>
+</ul>      
+<a onclick="logout()" id="signout">Sign Out</a>
+
+
+
+
             </div>
     <div id="right">
-       <div id="right_top"></div>
-       <div id="right_bottom">
-           <button id="checkoutbtn" onClick="checkout()">Checkout Securely</button>
-           <p style="font-size: 10px; text-align: center;margin-left: 20px;">By clicking the button you accept the Terms and Conditions and you agree that you have read and accept our Privacy Policy.</p>
-        <p>We Accept</p>
-        <img src="https://hamleysgumletfront.gumlet.io/_nuxt/img/paymet-img.0852f88.png" width="300px" alt="">
-        <br><p>Need help?<br>
-            Please contact customer service</p>
-        </div>
+         <div id="account_over"><h3>Account Overview</h3></div>
+         <p>Name:Demo</p>
+         <p id="mobilep"></p>
+         <p>Email:Demo@gmail.com</p>
+      
    </div>
     </div>
 
@@ -215,6 +222,44 @@
 
 </body>
 </html>
-<script src="JS/bag.js">
+<script  >
+    function myFunction(x) {
+    if (x.matches ) { // If media query matches
+      document.querySelector("#loginm").innerText="";
+      document.querySelector("#bagm").innerText="";
+      document.querySelector("#wishlistm").innerText="";
+      document.querySelector("#trackm").innerText="";
+      var bag=document.querySelector("#nav_center");
+       document.querySelector("#nav-bar").append(bag);
+      document.querySelector("#search").style.width="600px";
+    }  
+  }
+  var x = window.matchMedia("(max-width: 761px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction);
+    var temp=localStorage.getItem("mobile");
+ var bag= document.createElement("p");
+ bag.innerText="Mobile: "+temp;
+ document.querySelector("#mobilep").append(bag);
   
+ function logout(){
+     localStorage.removeItem("success");
+     localStorage.removeItem("bagitem");
+     localStorage.removeItem("mobile");
+     localStorage.removeItem("wishlist");
+     alert("Successfully Log Out");
+     window.location.href="login.html";
+ }
+ if(localStorage.getItem("success")==1 && !x.matches){
+           var bag=document.querySelector("#loginpage").innerText="";
+           logdiv=document.createElement("div");
+           img=document.createElement("img");
+           img.src="assest/img/teddy.png";
+           img.style.width="20px";
+           var acc=document.createElement("a");
+           acc.href="accountpage.html";
+           acc.innerText="Account";
+           logdiv.append(img,acc);
+           document.querySelector("#loginpage").append(logdiv);
+          }
     </script>

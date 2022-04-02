@@ -11,12 +11,18 @@
         .w3-left, .w3-right{
             height:300px;width:13px;padding-right: 80px;
         }
+
     #container{
-        background-color:#CF102D;
         width: 100%;
-        margin-top: 0px;
+       background-color: #FCF3EC;
+       display: flex;
+       flex-direction: row;
+       gap: 20px;
+   
     }
-    
+    .spacer{
+        height: 80px;
+    }
     #nav-bar{
         width: 100%;
         margin:  0px;
@@ -27,7 +33,8 @@
         line-height: 24px;
         justify-content:  space-between;
         padding: 5px;
-        /* position: fixed ; */
+        position: fixed ;
+        
         
     }
 
@@ -184,13 +191,7 @@
         padding-right: 40px;
         color: rgb(0, 0, 0);
     }
-    #container{
-        width: 100%;
-       background-color: #FCF3EC;
-       display: flex;
-       flex-direction: row;
-       gap: 20px;
-    }
+  
     #right{
         width: 30%;
         background-color: white;
