@@ -334,13 +334,91 @@ padding-top: 10px;
   margin-left: 20px;
   margin-top: 30px;
 }
+@media all and (min-width: 760px) and (max-width: 990px)
+{
+            #nav_left{
+               display: none;
+            }
+     #nav_right>div,#nav_right>div>a{
+         font-size: 10px;
+     }
+     #nav_right{
+         padding: 0;
+         margin: 0;
+     }
+     #search{
+         width:180px;
+     }
+     .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+     #container{
+         padding:20px
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     }
+}
+@media all and (min-width: 81px) and (max-width: 761px)
+{
+    #nav_left{
+               display: none;
+            }
+    #nav_right{
+        font-display: none;
+         
+    }
+    .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#container{
+         padding:20px;
+         display:block;
+         width: 100%;
+         padding-left: 10px;
+         padding-right: 15px;
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     } 
+     #left{
+         width: 100%;
+         margin-right: 0px;
+         padding-right: 15px;
+     } 
+     #right{
+         width: 90%;
+         margin: auto;
+     }
+
+}
     </style>
 </head>
 <body>
       <!-- nav bar start here -->
     <div id="nav-bar"> 
+        <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
       <div id="nav_left">
-          <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
+         
       <!-- category drop down start -->
       <div id="cat">Category&#9660;
           <div class="dropdown-content">
@@ -457,11 +535,11 @@ padding-top: 10px;
           <div><input id="search" placeholder="Search" type="text"></div>
       </div>
       <div id="nav_right">
-          <div> <i class="fa fa-truck-fast"></i><a href="track.html"> Track order</a></div>
-          <div id="loginpage"><img src="assest/img/teddy.png" width="20px" alt=""><a href="login.html"> Login</a></div>
-          <div id="wl"><i class="fa fa-heart"></i><a href="wishlist.html"> wishlist</a></div>
-          <div id="bl"><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag</a></div>
-     </div>
+        <div> <a href="track.html"><i class="fa fa-truck-fast"></i></a><a id="trackm" href="track.html"> Track order</a></div>
+        <div id="loginpage"><a href="login.html"><img id="los" src="assest/img/teddy.png" width="20px" alt=""></a><a id="loginm" href="login.html"> Login</a></div>
+        <div id="wl"><a href="wishlist.html"><i class="fa fa-heart"></i></a><a id="wishlistm" href="wishlist.html"> wishlist</a></div>
+        <div id="bl"><a href="bag.html"><img src="assest/img/bag.png" width="12px" alt=""></a><a id="bagm" href="bag.html"> My Bag</a></div>
+   </div>
 
 </div>
 <!-- nav bar end here -->
@@ -543,6 +621,25 @@ padding-top: 10px;
       </div>
   </div>
     <script>
+function myFunction(x) {
+  if (x.matches ) { // If media query matches
+    document.querySelector("#loginm").innerText="";
+    document.querySelector("#bagm").innerText="";
+    document.querySelector("#wishlistm").innerText="";
+    document.querySelector("#trackm").innerText="";
+    var bag=document.querySelector("#nav_center");
+     document.querySelector("#nav-bar").append(bag);
+    document.querySelector("#search").style.width="600px";
+  }  
+}
+var x = window.matchMedia("(max-width: 761px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction);
+
+
+
+
+
       n =  new Date();
       y = n.getFullYear();
       m = n.getMonth() + 1;
@@ -589,9 +686,12 @@ var total = data.reduce(function (sum, elem, index, arr) {
   var items=document.createElement("div");
    var items1=document.createElement("h2");
    items1.innerText=length+" items";
-   
+   if(localStorage.getItem("totalprice")==null)
+     localtotal=total;
+     else
+     localtotal=localStorage.getItem("totalprice");
      var items2=document.createElement("h2");
-   items2.innerHTML="&#8377; "+total
+   items2.innerHTML="&#8377; "+localtotal;
     items.append(items1,items2);
    
     var del=document.createElement("div");
@@ -605,9 +705,9 @@ var total = data.reduce(function (sum, elem, index, arr) {
     totprice.innerText="Total"
      var pricetot=document.createElement("h2");
     if(total<999)
-    pricetot.innerHTML="&#8377; "+total+100;
+    pricetot.innerHTML="&#8377; "+localtotal+100;
     else
-    pricetot.innerHTML="&#8377; "+total;
+    pricetot.innerHTML="&#8377; "+localtotal;
     tot.append(totprice,pricetot);
 
   var voucher=document.createElement("div");
@@ -719,5 +819,17 @@ else
 
           document.querySelector("#container").append(head,para);
        }
+       if(localStorage.getItem("success")==1 && !x.matches){
+         var bag=document.querySelector("#loginpage").innerText="";
+         logdiv=document.createElement("div");
+         img=document.createElement("img");
+         img.src="assest/img/teddy.png";
+         img.style.width="20px";
+         var acc=document.createElement("a");
+         acc.href="index.html";
+         acc.innerText="Account";
+         logdiv.append(img,acc);
+         document.querySelector("#loginpage").append(logdiv);
+        }
 
     </script>

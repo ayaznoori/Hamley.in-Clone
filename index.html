@@ -296,8 +296,30 @@
                display: none;
             }
     #nav_right{
-        display: none;
+        font-display: none;
+         
     }
+    .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#container{
+         padding:20px
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     }  
 
 }
 </style>
@@ -423,10 +445,10 @@
             <div><input id="search" placeholder="Search" type="text"></div>
         </div>
         <div id="nav_right">
-            <div> <i class="fa fa-truck-fast"></i><a href="track.html"> Track order</a></div>
-            <div id="loginpage"><img src="assest/img/teddy.png" width="20px" alt=""><a href="login.html"> Login</a></div>
-            <div id="wl"><i class="fa fa-heart"></i><a href="wishlist.html"> wishlist</a></div>
-            <div id="bl"><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag</a></div>
+            <div> <a href="track.html"><i class="fa fa-truck-fast"></i></a><a id="trackm" href="track.html"> Track order</a></div>
+            <div id="loginpage"><a href="login.html"><img id="los" src="assest/img/teddy.png" width="20px" alt=""></a><a id="loginm" href="login.html"> Login</a></div>
+            <div id="wl"><a href="wishlist.html"><i class="fa fa-heart"></i></a><a id="wishlistm" href="wishlist.html"> wishlist</a></div>
+            <div id="bl"><a href="bag.html"><img src="assest/img/bag.png" width="12px" alt=""></a><a id="bagm" href="bag.html"> My Bag</a></div>
        </div>
 
   </div>
@@ -533,6 +555,26 @@
 </body>
 </html>
 <script>
+function myFunction(x) {
+  if (x.matches ) { // If media query matches
+    document.querySelector("#loginm").innerText="";
+    document.querySelector("#bagm").innerText="";
+    document.querySelector("#wishlistm").innerText="";
+    document.querySelector("#trackm").innerText="";
+    var bag=document.querySelector("#nav_center");
+     document.querySelector("#nav-bar").append(bag);
+    document.querySelector("#search").style.width="600px";
+  }  
+}
+var x = window.matchMedia("(max-width: 761px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction);
+
+
+
+
+
+
     var obj=[{ 
         img:"https://hamleysgumlet.gumlet.io/product/491902369/665/491902369-1.jpg" ,
         probrand: "Sparkle Girlz",
@@ -671,7 +713,7 @@
          
      })
   
-     if(localStorage.getItem("success")==1){
+     if(localStorage.getItem("success")==1 && !x.matches){
          var bag=document.querySelector("#loginpage").innerText="";
          logdiv=document.createElement("div");
          img=document.createElement("img");

@@ -312,9 +312,12 @@ var total = data.reduce(function (sum, elem, index, arr) {
   var items=document.createElement("div");
    var items1=document.createElement("h2");
    items1.innerText=length+" items";
-   
+   if(localStorage.getItem("totalprice")==null)
+     localtotal=total;
+     else
+     localtotal=localStorage.getItem("totalprice");
      var items2=document.createElement("h2");
-   items2.innerHTML="&#8377; "+total
+   items2.innerHTML="&#8377; "+localtotal;
     items.append(items1,items2);
    
     var del=document.createElement("div");
@@ -328,9 +331,9 @@ var total = data.reduce(function (sum, elem, index, arr) {
     totprice.innerText="Total"
      var pricetot=document.createElement("h2");
     if(total<999)
-    pricetot.innerHTML="&#8377; "+total+100;
+    pricetot.innerHTML="&#8377; "+localtotal+100;
     else
-    pricetot.innerHTML="&#8377; "+total;
+    pricetot.innerHTML="&#8377; "+localtotal;
     tot.append(totprice,pricetot);
 
   var voucher=document.createElement("div");

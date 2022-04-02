@@ -206,6 +206,80 @@ p{
   
   outline: none;
 }
+#set1{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+@media all and (min-width: 760px) and (max-width: 990px)
+{
+  #container{
+ 
+       flex-direction:column;
+       gap: 20px;
+    }
+    #right{
+        width: 80%;
+      margin: auto;
+        padding: 10px;
+ 
+       
+    }
+    #left{
+        width: 80%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: auto;
+        margin-right: 10px;
+        margin-left: 10px;
+     
+    }
+ 
+}
+@media all and (min-width: 81px) and (max-width: 761px)
+{
+  #container{
+ flex-direction:column;
+ gap: 20px;
+}
+#right{
+        width: 80%;
+        margin: auto;
+        padding: 10px;
+ 
+       
+    }
+    #left{
+        width: 80%;
+        padding-left: 10px;
+        padding-right: 10px;
+ 
+        margin-right: 10px;
+     
+    }
+  
+    #in1{
+ 
+width: 60%;
+margin-top: 10px;
+margin-bottom: 30px;
+padding-left: 25px;
+border-radius: 30px;
+font-size: 17px;
+
+}
+#set{
+    width: 100%;   
+    display: flex;
+    flex-direction: column;
+  justify-content: space-between;
+   
+}
+#set1{
+  margin-top: 120px;
+  display: block;
+}
+}
 
 
 
@@ -242,13 +316,13 @@ p{
                     <input type="text"  class="ccity" id="in2" placeholder="Enter your pincode*" required>
                  </div>
                 </div>
-                <div id="set">
-                 <div class="input_box">
-                    <span class="delatile">State*</span><br>
+                <div id="set1">
+                 <div class="input_box1">
+                    <span class="delatile1">State*</span><br>
                     <input type="text" class="cstate" id="in2" placeholder="Enter your State*" required>
                  </div>
-                 <div class="input_box">
-                    <span class="delatile">Receiver mobile number*</span><br>
+                 <div class="input_box1">
+                    <span class="delatile1">Receiver mobile number*</span><br>
                     <input type="number" class="cmobile" id="in2" placeholder="Enter receiver mobile number *" required>
                  </div>
                 </div>
@@ -301,9 +375,13 @@ var total = data.reduce(function (sum, elem, index, arr) {
   var items=document.createElement("div");
    var items1=document.createElement("h2");
    items1.innerText=length+" items";
-   
+   if(localStorage.getItem("totalprice")==null)
+     localtotal=total;
+     else
+     localtotal=localStorage.getItem("totalprice");
+
      var items2=document.createElement("h2");
-   items2.innerHTML="&#8377; "+total
+   items2.innerHTML="&#8377; "+localtotal;
     items.append(items1,items2);
    
     var del=document.createElement("div");
@@ -316,10 +394,11 @@ var total = data.reduce(function (sum, elem, index, arr) {
    var totprice=document.createElement("h2");
     totprice.innerText="Total"
      var pricetot=document.createElement("h2");
+     
     if(total<999)
-    pricetot.innerHTML="&#8377; "+total+100;
+    pricetot.innerHTML="&#8377; "+localtotal+100;
     else
-    pricetot.innerHTML="&#8377; "+total;
+    pricetot.innerHTML="&#8377; "+localtotal;
     tot.append(totprice,pricetot);
 
   var voucher=document.createElement("div");

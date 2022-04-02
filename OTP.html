@@ -233,14 +233,88 @@
             
             cursor: pointer;
         }
+        @media all and (min-width: 760px) and (max-width: 990px)
+{
+            #nav_left{
+               display: none;
+            }
+     #nav_right>div,#nav_right>div>a{
+         font-size: 10px;
+     }
+     #nav_right{
+         padding: 0;
+         margin: 0;
+     }
+     #search{
+         width:180px;
+     }
+     .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+     #container{
+         padding:20px
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     }
+     #form{
         
+            width:60%;
+            
+        }
+}
+@media all and (min-width: 81px) and (max-width: 761px)
+{
+    #nav_left{
+               display: none;
+            }
+    #nav_right{
+        font-display: none;
+         
+    }
+    .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#container{
+         padding:20px
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     }  
+     #form{
+        
+        width:80%;
+        
+    }
+
+}  
 
    </style>
 <body>
  <!-- nav bar start here -->
     <div id="nav-bar"> 
+        <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
         <div id="nav_left">
-            <div><a href="index.html"><img src="assest/img/logopng.png" width="130px" height="60px" alt=""></a></div>
+           
         <!-- category drop down start -->
         <div id="cat">Category&#9660;
             <div class="dropdown-content">
@@ -357,10 +431,10 @@
             <div><input id="search" placeholder="Search" type="text"></div>
         </div>
         <div id="nav_right">
-            <div> <i class="fa fa-truck-fast"></i><a href="track.html"> Track order</a></div>
-            <div id="loginpage"><img src="assest/img/teddy.png" width="20px" alt=""><a href="login.html"> Login</a></div>
-            <div id="wl"><i class="fa fa-heart"></i><a href="wishlist.html"> wishlist</a></div>
-            <div id="bl"><img src="assest/img/bag.png" width="12px" alt=""><a href="bag.html"> My Bag</a></div>
+            <div> <a href="track.html"><i class="fa fa-truck-fast"></i></a><a id="trackm" href="track.html"> Track order</a></div>
+            <div id="loginpage"><a href="login.html"><img id="los" src="assest/img/teddy.png" width="20px" alt=""></a><a id="loginm" href="login.html"> Login</a></div>
+            <div id="wl"><a href="wishlist.html"><i class="fa fa-heart"></i></a><a id="wishlistm" href="wishlist.html"> wishlist</a></div>
+            <div id="bl"><a href="bag.html"><img src="assest/img/bag.png" width="12px" alt=""></a><a id="bagm" href="bag.html"> My Bag</a></div>
        </div>
   </div>
  <!-- nav bar end here -->
@@ -432,6 +506,23 @@
 </body>
 </html>
 <script>
+function myFunction(x) {
+  if (x.matches ) { // If media query matches
+    document.querySelector("#loginm").innerText="";
+    document.querySelector("#bagm").innerText="";
+    document.querySelector("#wishlistm").innerText="";
+    document.querySelector("#trackm").innerText="";
+    var bag=document.querySelector("#nav_center");
+     document.querySelector("#nav-bar").append(bag);
+    document.querySelector("#search").style.width="600px";
+  }  
+}
+var x = window.matchMedia("(max-width: 761px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction);
+
+
+
     var submit = document.querySelector("form");
     submit.addEventListener("submit", checkSubmit)
     
@@ -449,7 +540,7 @@
             document.querySelector("#otp").value = "";
         }
     }
-    if(localStorage.getItem("success")==1){
+    if(localStorage.getItem("success")==1 && !x.matches){
          var bag=document.querySelector("#loginpage").innerText="";
          logdiv=document.createElement("div");
          img=document.createElement("img");
