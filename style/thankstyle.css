@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+         #nav-bar{
+        width: 100%;
+        margin:  0px;
+        display: flex;
+        gap: 10px;
+        background-color: #CF102D;
+        color: white;
+        line-height: 24px;
+        justify-content:  space-between;
+        padding: 5px;
+        /* position: fixed ; */
+        
+    }
+
+    #nav_left{
+        display: flex;
+        gap: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-left: 20px;
+        height: 60px;
+    }
+    #nav_right{
+        display: flex;
+        gap: 15px;
+        font-size: 12px;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        align-items: center;
+    }
+    #nav_right a{
+        text-decoration: none;
+    }
+    #nav_right a:hover{
+        text-decoration: none;
+        color: white;
+    }
+    #nav_center{
+        display: flex;
+        gap: 35px;
+        font-size: 12px;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        align-items: center;
+    }
+    #search{
+        border-radius: 30px;
+        height: 50px;
+        width: 300px;
+        border: 0;
+        padding-left: 50px;
+        background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+        background-size: 30px;
+        background-position: 15px;
+        background-color: white;
+        font-size: 16px;
+        font-family:'Poppins', sans-serif ;
+        font-style: italic;
+
+        align-items: center;
+    }
+    .dropdown-content {
+         display: none;
+         position:absolute;
+         color: black;
+         width:1200px;
+         background-color: white;
+         margin-top: 23px;
+   
+    }
+    #cat,#age{
+        position: relative;
+        display: inline-block;
+        height: 55px;
+        margin-top: 30px;
+        cursor: pointer;
+        
+    }
+    #age img{
+        margin: 20px;
+    }
+    #cat:hover .dropdown-content ,#age:hover .dropdown-content  {
+        display:flex;
+        gap: 20px;
+        z-index: 1000;  
+        flex-wrap: wrap;
+    }
+   
+ 
+    .dropdown-content>div>div{
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        margin:20px;
+        height: 200px;
+    }
+    a{
+        font-size: 12px;
+    }
+    a:hover{
+        color: red;
+    }
+        #bar{
+     display: flex;
+     height: 80px;
+     width: 100%;
+     margin:0;
+      background-color:#CF102D;
+      justify-content:space-between;
+      align-items: center;
+    }
+     #redband{
+        background-color: #CF102D;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #footer_container{
+        display: flex;
+        flex-direction: row;
+        margin: 40px;
+        gap: 20px;
+    }
+    #footer_container>div{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 300px;
+    }
+    #footer_container>div:last-child{
+        width: 650px;
+    }
+    #footer_container a{
+        font-size:14px;
+    }
+    #newsletter{
+        width: 300px;
+        height: 60px;
+        padding-left: 50px;
+        background: url("assest/img/pngegg.png") no-repeat right;
+        background-size: 30px;
+        background-position: 15px;
+        background-color: white;
+        font-size: 16px;
+        font-family:'Poppins', sans-serif ;
+        font-style: italic;
+        border-radius: 30px;
+    }
+ 
+    h1{
+        font-size: 45px;
+        font-weight: bolder;
+       text-align: center;
+    }
+    h3{
+      font-family:'Poppins', sans-serif ;
+ 
+ 
+        color: rgb(0, 0, 0);
+    }
+    #container{
+        width: 100%;
+       background-color: #FCF3EC;
+       display: flex;
+       flex-direction: row;
+       gap: 20px;
+    }
+    #right{
+        width: 40%;
+        background-color: white;
+        padding: 50px;
+        font-family:'Poppins', sans-serif ;
+       
+    }
+    #left{
+        width: 70%;
+        padding-left: 15px;
+        padding-right: 10px;
+        background-color: #FCF3EC;
+        margin-right: 50px;
+        font-family:'Poppins', sans-serif ;
+        display: flex;;
+        flex-direction: column;
+    }
+ #right_top>div{
+   display: flex;
+   flex-direction: column;
+ }
+#right_top>div>div{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+#right_top>div>div:nth-child(1){
+    border-bottom: 3px solid rgb(153, 152, 152);
+}
+#voucherform {
+  width: 300px;
+  height: 50px;;
+  display:flex;
+  flex-direction:row;
+  border:1px solid grey;
+  padding:10px;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 1px -5px 0px;
+  margin-top: 30px;
+ 
+}
+#voucherinput {
+    font-family:'Poppins', sans-serif ;
+  flex-grow:2;
+  
+  border:none;
+}
+#voucherinput:focus {
+  
+  outline: none;
+}
+
+h2{
+    font-family:'Poppins', sans-serif ; 
+    font-size: 20px;
+    font-weight: bolder;
+}
+#checkoutbtn{
+    border-radius: 30px;
+    width: 280px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    border:2px solid #CF102D;
+    box-shadow: #CF102D 1px 4px 0px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: white;
+}
+#checkoutbtn:hover{
+    cursor: pointer;
+} 
+#voucherinput:focus {
+  
+  outline: none;
+}
+ 
+   .title{
+       
+       font-size: 30px;
+       padding-top: 80px;
+       margin-bottom: 30px;
+       margin-left: 20px;
+       font-weight: bolder;
+       font-size: 25px;
+       border-bottom: 3px solid black;
+       padding-bottom: 30px;
+
+       
+}
+#right>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+#right>div>div:nth-child(2){
+    border-bottom: 1px solid black;
+}
+#voucherform {
+  width: 650px;
+  height: 40px;;
+  display:flex;
+  flex-direction:row;
+  border:1px solid grey;
+  padding:10px;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-left: 30px;
+}
+#voucherinput {
+  
+  flex-grow:2;
+  
+  border:none;
+}
+#voucherinput:focus {
+  
+  outline: none;
+}
+#card{
+width:40%;
+border-top: 4px solid black;
+padding-top: 10px;
+display: flex;
+flex-direction: column;
+line-height: 3px;
+}
+#cod{
+  width:40%;
+  border-top: 4px solid black;
+padding-top: 10px;
+
+}
+
+#divflex{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  line-height: 2px;
+}
+#instruction{
+  padding-left: 15px;
+}
+#card-cod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+@media all and (min-width: 760px) and (max-width: 990px)
+{
+            #nav_left{
+               display: none;
+            }
+     #nav_right>div,#nav_right>div>a{
+         font-size: 10px;
+     }
+     #nav_right{
+         padding: 0;
+         margin: 0;
+     }
+     #search{
+         width:180px;
+     }
+     .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+     #container{
+         padding:20px
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     }
+}
+@media all and (min-width: 81px) and (max-width: 761px)
+{
+    #nav_left{
+               display: none;
+            }
+    #nav_right{
+        font-display: none;
+         
+    }
+    .w3-left{
+         display: none;
+     }
+     .w3-right{
+         display: none;
+     }
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#container{
+         padding:20px;
+         display:block;
+         width: 100%;
+         padding-left: 10px;
+         padding-right: 15px;
+     }
+     #footer_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 40px;
+        gap: 20px;
+     } 
+     #left{
+         width: 100%;
+         margin-right: 0px;
+         padding-right: 15px;
+     } 
+     #right{
+         width: 90%;
+         margin: auto;
+     }
+
+}
