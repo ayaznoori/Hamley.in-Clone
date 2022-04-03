@@ -61,7 +61,7 @@ We have tried to build the exact Navigation bar as Hamleys.in has with the all @
 
  My name is Mohammad Ayaz Noori. I used many properties and learned a lot of things from this project:-
 
-1. I worked on the home page tried clone it exactly like the original website’s page specifically when it comes to the Navigation bar, footer, banners.
+1. I worked on the Home Page and Account Page tried clone it exactly like the original website’s page specifically when it comes to the Navigation bar, footer, banners.
 2. Worked on almost every page of the website in terms of syncing all the pages together and fixing the Navigation bar, footer sitemap, and as well as on functionality of the website.
 
 3. I worked on much other syncing functionality and Building the Webpages responsive in this project .
