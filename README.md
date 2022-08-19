@@ -115,10 +115,11 @@ My name is Shameem Latheef. I used many properties and learned a lot of things f
 3. I co-ordinate with ayaz building My Bag  page.
 
 
-### This was our first project where we used DOM Manipulanation. Here we have GitHub repository link of our HamleysToy Store project :
+### This was our first project where we used DOM Manipulanation. Here we have GitHub repository link and Netlify Link of our HamleysToy Store project :
 
-https://github.com/ayaznoori/Unit_2_Project.git
+Git - https://github.com/ayaznoori/Unit_2_Project.git
 
+Netlify - https://snazzy-macaron-bdbbae.netlify.app
 
 ## Hope you all like our Hamleys Clone. Thank you.
 
